@@ -1,4 +1,5 @@
 # Aplicatie-Administrare-Stadion
+DOCUMENT SPECIFICATII
 
 Membri echipei: Kovacs Iulia-Francesca , Kafka Patrik-Franz
 
