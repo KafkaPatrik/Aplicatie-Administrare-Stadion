@@ -34,7 +34,8 @@
           <Text fx:id="registrationMessage" fill="#fc8700" layoutX="169.0" layoutY="331.0" textAlignment="CENTER" wrappingWidth="224.60000000000002">
          <font>
             <Font name="Britannic Bold" size="13.0" />
-         </font></Text>
+         </font>
+          </Text>
        <Button fx:id="btnSingUp" layoutX="339.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #fc8700;" text="Înregistrare">
            <font>
                <Font name="System Bold" size="15.0" />

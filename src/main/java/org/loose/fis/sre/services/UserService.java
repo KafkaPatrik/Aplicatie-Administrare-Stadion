@@ -58,4 +58,15 @@ public class UserService {
     }
 
 
+    public static String validateLogin(String username, String password) {
+        for (User user : userRepository.find()) {
+            if(username.equals(user.getUsername()))
+            {   String encodedPassword=encodePassword(username,password);
+                if (encodedPassword.equals(user.getPassword()))
+                    return "Valid";
+            }
+        }
+        return "Invalid";
+    }
+
 }
