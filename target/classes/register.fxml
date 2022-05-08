@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="400" prefWidth="600"
-          vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
-          fx:controller="org.loose.fis.sre.controllers.RegistrationController">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
-    </padding>
-    <Text id="title-text" text="Aplicatie Administrare Stadion" GridPane.columnIndex="0" GridPane.columnSpan="2"
-          GridPane.rowIndex="0"/>
+<?import javafx.scene.text.*?>
 
-    <Label text="Nume utilizator:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+   <children>
+       <Text id="title-text" fill="#fc8700" layoutX="130.0" layoutY="114.0" text="Aplicatie Administrare Stadion">
+         <font>
+            <Font name="Britannic Bold" size="24.0" />
+         </font>
+      </Text>
+          <Label layoutX="134.0" layoutY="179.0" text="Nume utilizator:" textFill="#fc8700">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font></Label>
+          <TextField fx:id="usernameField" layoutX="320.0" layoutY="175.0" />
+          <Label layoutX="134.0" layoutY="228.0" text="Parola:" textFill="#fc8700">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font></Label>
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+          <PasswordField fx:id="passwordField" layoutX="320.0" layoutY="224.0" />
 
-    <Label text="Parola:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+          <Label layoutX="134.0" layoutY="278.0" text="Rol:" textFill="#fc8700">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font></Label>
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+          <ChoiceBox fx:id="role" layoutX="320.0" layoutY="274.0" prefWidth="150.0">
+          </ChoiceBox>
 
-    <Label text="Rol:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-    </ChoiceBox>
-
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button onAction="#handleRegisterAction" text="Inregistrare"/>
-    </HBox>
-</GridPane>
+          <Text fx:id="registrationMessage" fill="#fc8700" layoutX="169.0" layoutY="331.0" textAlignment="CENTER" wrappingWidth="224.60000000000002">
+         <font>
+            <Font name="Britannic Bold" size="13.0" />
+         </font></Text>
+       <Button fx:id="btnSingUp" layoutX="339.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #fc8700;" text="Înregistrare">
+           <font>
+               <Font name="System Bold" size="15.0" />
+           </font>
+       </Button>
+       <Button fx:id="btnBackLogin" layoutX="134.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleBackToLoginAction" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fc8700;" text="Înapoi" textAlignment="JUSTIFY" textFill="#0d0d0d" textOverrun="CLIP">
+           <font>
+               <Font name="System Bold" size="15.0" />
+           </font>
+       </Button>
+   </children>
+</AnchorPane>
