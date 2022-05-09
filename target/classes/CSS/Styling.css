@@ -1,6 +1,6 @@
 @font-face {
     font-family: "PROGRESSIVE SOUL";
-    src: url('src/main/resources/Fonts/PROGRESSIVE SOUL.ttf');
+    src: url('Fonts/PROGRESSIVE SOUL.ttf');
 }
 
 .label {
@@ -11,3 +11,7 @@
 .button .text {
     -fx-font-family: 'PROGRESSIVE SOUL';
 }
+
+.body {
+  background-image: url("Images\Gradient-Abstract-Background.jpg");
+ }
