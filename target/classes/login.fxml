@@ -12,13 +12,13 @@
                 <Image url="@Images/Gradient-Abstract-Background.jpg" />
             </image>
         </ImageView>
-            <Label layoutX="138.0" layoutY="191.0" text="Username" textFill="WHITE">
+            <Label layoutX="138.0" layoutY="191.0" text="Nume utilizator:" textFill="WHITE">
                 <font>
                     <Font name="SansSerif Bold" size="15.0" />
                 </font>
             </Label>
             <TextField fx:id="usernameTextField" layoutX="339.0" layoutY="187.0" promptText="Username" />
-            <Label layoutX="141.0" layoutY="240.0" text="Password" textFill="WHITE">
+            <Label layoutX="141.0" layoutY="240.0" text="Parolă:" textFill="WHITE">
                 <font>
                     <Font name="System Bold" size="15.0" />
                 </font>

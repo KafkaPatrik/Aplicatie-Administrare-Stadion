@@ -1,8 +1,10 @@
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\UsernameAlreadyExistsException.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\UserService.java
+D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\User.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\HomePageController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\FileSystemService.java
+D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountAccessController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\LoginController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\RegistrationController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\Main.java

@@ -13,12 +13,12 @@
                 <Image url="@Images/Gradient-Abstract-Background.jpg" />
             </image>
         </ImageView>
-      <Button layoutX="440.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #55c3fe;" text="Cont" textFill="#fafafa">
+      <Button fx:id="btnAccountInfo" layoutX="440.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleAccountInfoAction" style="-fx-background-color: #55c3fe;" text="Cont" textFill="#fafafa">
           <font>
               <Font name="System Bold" size="15.0" />
           </font>
       </Button>
-      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: #9d49f6;" text="Acasă" textFill="#fafafa">
+      <Button fx:id="btnHomePage" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleHomePageAction" style="-fx-background-color: #9d49f6;" text="Acasă" textFill="#fafafa">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

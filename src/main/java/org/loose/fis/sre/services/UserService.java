@@ -18,7 +18,7 @@ public class UserService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("registration-example.db").toFile())
+                .filePath(getPathToFile("users-database.db").toFile())
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
@@ -62,11 +62,47 @@ public class UserService {
         for (User user : userRepository.find()) {
             if(username.equals(user.getUsername()))
             {   String encodedPassword=encodePassword(username,password);
-                if (encodedPassword.equals(user.getPassword()))
+                if (encodedPassword.equals(user.getPassword())) {
+                    user.setCurrent_role(user.getRole());
+                    user.setCurrent_email(user.getEmail());
+                    user.setCurrent_firstName(user.getFirstName());
+                    user.setCurrent_lastName(user.getLastName());
+                    user.setCurrent_phoneNumber(user.getPhoneNumber());
                     return "Valid";
+                }
             }
         }
         return "Invalid";
+    }
+
+
+    public static boolean modifyClientAccountInfo (String username, String password, String email, String firstName, String lastName, String phoneNumber) {
+        for (User user : userRepository.find()) {
+            if(username.equals(user.getUsername()))
+            {   String encodedPassword=encodePassword(username,password);
+                if (encodedPassword.equals(user.getPassword())) {
+                    user.setEmail(email);
+                    user.setFirstName(firstName);
+                    user.setLastName(lastName);
+                    user.setPhoneNumber(phoneNumber);
+                    userRepository.update(user);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static User returnCurrentUser (String username, String password){
+        for (User user : userRepository.find()) {
+            if(username.equals(user.getUsername()))
+            {   String encodedPassword=encodePassword(username,password);
+                if (encodedPassword.equals(user.getPassword())) {
+                    return user;
+                }
+            }
+        }
+        return null;
     }
 
 }
