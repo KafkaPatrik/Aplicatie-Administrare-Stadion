@@ -96,7 +96,7 @@
                 <Glow />
             </effect>
         </Label>
-        <Text fx:id="message" fill="WHITE" layoutX="388.0" layoutY="159.0" text="Introduceți username-ul și parola pentru a vedea datele contulu!" textAlignment="CENTER" wrappingWidth="170.59998474121096">
+        <Text fx:id="message" fill="WHITE" layoutX="388.0" layoutY="159.0" text="Introduceți username-ul și parola pentru a vedea datele contului!" textAlignment="CENTER" wrappingWidth="170.59998474121096">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
@@ -106,5 +106,15 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label fx:id="roleText" layoutX="54.0" layoutY="412.0" style="-fx-background-color: #9d49f6; -fx-border-color: white;" text="Rol:" textFill="#fafafa">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Text fx:id="warningNewAccountMessage" fill="WHITE" layoutX="187.0" layoutY="239.0" textAlignment="CENTER" wrappingWidth="149.5999999999999">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

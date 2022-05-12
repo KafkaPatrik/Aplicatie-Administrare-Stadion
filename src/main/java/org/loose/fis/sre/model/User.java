@@ -10,8 +10,6 @@ public class User {
     private String firstName, lastName;
     private String email;
     private String phoneNumber;
-    //Data of User in use of application
-    private static String Current_role, Current_firstName, Current_lastName, Current_email, Current_phoneNumber;
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -29,54 +27,15 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public static String getCurrent_role() {
-        return Current_role;
-    }
-
-    public static void setCurrent_role(String current_role) {
-        User.Current_role = current_role;
-    }
-
-    public static String getCurrent_firstName() {
-        return Current_firstName;
-    }
-
-    public static void setCurrent_firstName(String current_firstName) {
-        User.Current_firstName = current_firstName;
-    }
-
-    public static String getCurrent_lastName() {
-        return Current_lastName;
-    }
-
-    public static void setCurrent_lastName(String current_lastName) {
-        User.Current_lastName = current_lastName;
-    }
-
-    public static String getCurrent_email() {
-        return Current_email;
-    }
-
-    public static void setCurrent_email(String current_email) {
-        User.Current_email = current_email;
-    }
-
-    public static String getCurrent_phoneNumber() {
-        return Current_phoneNumber;
-    }
-
-    public static void setCurrent_phoneNumber(String current_phoneNumber) {
-        User.Current_phoneNumber = current_phoneNumber;
-    }
 
     public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
         this.role = role;
-        this.firstName="aaa";
-        this.lastName="bbb";
-        this.email="ccc";
-        this.phoneNumber="ddd";
+        this.firstName="";
+        this.lastName="";
+        this.email="";
+        this.phoneNumber="";
     }
 
     public User() {

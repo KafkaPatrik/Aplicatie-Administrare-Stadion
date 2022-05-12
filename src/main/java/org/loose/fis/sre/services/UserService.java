@@ -63,11 +63,6 @@ public class UserService {
             if(username.equals(user.getUsername()))
             {   String encodedPassword=encodePassword(username,password);
                 if (encodedPassword.equals(user.getPassword())) {
-                    user.setCurrent_role(user.getRole());
-                    user.setCurrent_email(user.getEmail());
-                    user.setCurrent_firstName(user.getFirstName());
-                    user.setCurrent_lastName(user.getLastName());
-                    user.setCurrent_phoneNumber(user.getPhoneNumber());
                     return "Valid";
                 }
             }

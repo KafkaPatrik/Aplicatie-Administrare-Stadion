@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.UserService;
@@ -35,6 +36,10 @@ public class ClientAccountAccessController {
     private Label firstNameText;
     @FXML
     private Label phoneNumberText;
+    @FXML
+    private Label roleText;
+    @FXML
+    private Text warningNewAccountMessage;
 
 
 
@@ -62,6 +67,9 @@ public class ClientAccountAccessController {
                 firstNameText.setText(current_user.getFirstName());
                 lastNameText.setText(current_user.getLastName());
                 phoneNumberText.setText(current_user.getPhoneNumber());
+                roleText.setText("Rol: " + current_user.getRole());
+                if (current_user.getEmail().length()==0)
+                    warningNewAccountMessage.setText("Trebuie completate datele contului\ndeoarece dețineți un cont nou creat!");
             }
         }
     }
