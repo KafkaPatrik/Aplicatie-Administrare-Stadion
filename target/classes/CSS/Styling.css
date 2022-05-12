@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "PROGRESSIVE SOUL";
+    src: url('src/main/resources/Fonts/PROGRESSIVE SOUL.ttf');
+}
+
+.label {
+    -fx-font-family: 'PROGRESSIVE SOUL';
+    -fx-font-size: 50;
+}
+
+.button .text {
+    -fx-font-family: 'PROGRESSIVE SOUL';
+}

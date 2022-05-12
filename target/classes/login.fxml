@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="loginPane" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+    <children>
+            <Label layoutX="139.0" layoutY="128.0" text="Username" textFill="#fc8700">
+                <font>
+                    <Font name="SansSerif Bold" size="15.0" />
+                </font>
+            </Label>
+            <TextField fx:id="usernameTextField" layoutX="340.0" layoutY="124.0" promptText="Username" />
+            <Label layoutX="142.0" layoutY="177.0" text="Password" textFill="#fc8700">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="340.0" layoutY="175.0" promptText="Password" />
+            <Button fx:id="btnLogIn" layoutX="130.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fc8700;" text="Login" textAlignment="JUSTIFY" textFill="#0d0d0d" textOverrun="CLIP">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Text fx:id="loginMessage" fill="#fc8700" layoutX="116.0" layoutY="291.0" textAlignment="CENTER" wrappingWidth="367.59998474121096">
+                <font>
+                    <Font name="SansSerif Bold" size="13.0" />
+                </font>
+            </Text>
+            <Button fx:id="btnSingUp" layoutX="350.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #fc8700;" text="Inregistrare">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+    </children>
+</AnchorPane>
