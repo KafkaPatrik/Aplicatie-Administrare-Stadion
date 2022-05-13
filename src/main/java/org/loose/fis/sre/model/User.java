@@ -7,11 +7,35 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private String firstName, lastName;
+    private String email;
+    private String phoneNumber;
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
 
     public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.firstName="";
+        this.lastName="";
+        this.email="";
+        this.phoneNumber="";
     }
 
     public User() {
@@ -37,6 +61,22 @@ public class User {
         return role;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -60,4 +100,5 @@ public class User {
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
+
 }

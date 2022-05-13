@@ -18,7 +18,7 @@ public class UserService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("registration-example.db").toFile())
+                .filePath(getPathToFile("users-database.db").toFile())
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
@@ -57,5 +57,47 @@ public class UserService {
         return md;
     }
 
+
+    public static String validateLogin(String username, String password) {
+        for (User user : userRepository.find()) {
+            if(username.equals(user.getUsername()))
+            {   String encodedPassword=encodePassword(username,password);
+                if (encodedPassword.equals(user.getPassword())) {
+                    return "Valid";
+                }
+            }
+        }
+        return "Invalid";
+    }
+
+
+    public static boolean modifyClientAccountInfo (String username, String password, String email, String firstName, String lastName, String phoneNumber) {
+        for (User user : userRepository.find()) {
+            if(username.equals(user.getUsername()))
+            {   String encodedPassword=encodePassword(username,password);
+                if (encodedPassword.equals(user.getPassword())) {
+                    user.setEmail(email);
+                    user.setFirstName(firstName);
+                    user.setLastName(lastName);
+                    user.setPhoneNumber(phoneNumber);
+                    userRepository.update(user);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static User returnCurrentUser (String username, String password){
+        for (User user : userRepository.find()) {
+            if(username.equals(user.getUsername()))
+            {   String encodedPassword=encodePassword(username,password);
+                if (encodedPassword.equals(user.getPassword())) {
+                    return user;
+                }
+            }
+        }
+        return null;
+    }
 
 }
