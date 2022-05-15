@@ -29,13 +29,22 @@ public class HomePageController {
     }
 
     public void handleHomePageAction (ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+        Parent root;
+
+        if(LoginController.current_user.getRole().equals("Administrator"))
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAdmin.fxml"));
+        else
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
         Stage window = (Stage) btnHomePage.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
 
     public void handleAccountInfoAction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientAccountInfoAccess.fxml"));
+        Parent root;
+        if(LoginController.current_user.getRole().equals("Administrator"))
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountInfoAccess.fxml"));
+            else
+        root = FXMLLoader.load(getClass().getClassLoader().getResource("clientAccountInfoAccess.fxml"));
         Stage window = (Stage) btnAccountInfo.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
