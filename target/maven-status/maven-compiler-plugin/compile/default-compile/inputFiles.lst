@@ -1,10 +1,15 @@
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\UsernameAlreadyExistsException.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\UserService.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\User.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\HomePageController.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\FileSystemService.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountAccessController.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\LoginController.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\RegistrationController.java
-D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aplicatie Administrare Stadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\Main.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccountModifyInfoController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\LoginController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAddEventController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\UsernameAlreadyExistsException.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\EventService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\FileSystemService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\User.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\UserService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccountAccessController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\RegistrationController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\Eveniment.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\HomePageController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountAccessController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\Main.java

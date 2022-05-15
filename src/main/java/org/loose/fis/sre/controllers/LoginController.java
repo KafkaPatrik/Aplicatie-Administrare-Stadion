@@ -41,11 +41,14 @@ public class LoginController {
     public void handleLoginAction(ActionEvent actionEvent) throws IOException {
         String username=usernameTextField.getText();
         String password=passwordField.getText();
-
+        Parent root;
         String validatingAnswer = UserService.validateLogin(username, password);
         if (validatingAnswer.equals("Valid")) {
             current_user=UserService.returnCurrentUser(username,password);
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+            if(current_user.getRole().equals("Administrator"))
+                root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAdmin.fxml"));
+            else
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
             Stage window = (Stage) btnLogIn.getScene().getWindow();
             window.setScene(new Scene(root, 600, 450));
         }
