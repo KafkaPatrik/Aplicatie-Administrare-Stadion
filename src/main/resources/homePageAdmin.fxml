@@ -41,9 +41,10 @@
                 <Image url="@Images/title.png" />
             </image>
         </ImageView>
-        <Button layoutX="269.0" layoutY="25.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #55c3fe;" text="Adaugă Eveniment" textFill="#fafafa" visible="true">
+        <Button fx:id="btnAddEvent" layoutX="269.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleAddEventAction" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #55c3fe;" text="Adaugă Eveniment" textFill="#fafafa" visible="true">
             <font>
                 <Font name="System Bold" size="15.0" />
-            </font></Button>
+            </font>
+      </Button>
     </children>
 </AnchorPane>

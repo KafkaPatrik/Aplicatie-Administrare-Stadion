@@ -8,6 +8,7 @@ import org.loose.fis.sre.model.Eveniment;
 import java.nio.charset.StandardCharsets;
 
 import java.util.Objects;
+import org.loose.fis.sre.exceptions.EventAlreadyExistsException;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
@@ -17,13 +18,14 @@ public class EventService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("users-database.db").toFile())
+                .filePath(getPathToFile("events-database.db").toFile())
                 .openOrCreate("test", "test");
 
         eventRepository = database.getRepository(Eveniment.class);
     }
 
-    public static void addEvent(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description){
+    public static void addEvent(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description)throws EventAlreadyExistsException{
+        checkEventDoesNotAlreadyExist(event_Id);
         eventRepository.insert(new Eveniment(event_Id,event_max_participants,event_Title,event_Location,event_Date,event_Description));
     }
 
@@ -53,5 +55,11 @@ public class EventService {
             }
         }
         return null;
+    }
+    private static void checkEventDoesNotAlreadyExist(int event_Id) throws EventAlreadyExistsException {
+        for (Eveniment eveniment : eventRepository.find()) {
+            if (event_Id==eveniment.get_event_Id())
+                throw new EventAlreadyExistsException(event_Id);
+        }
     }
 }

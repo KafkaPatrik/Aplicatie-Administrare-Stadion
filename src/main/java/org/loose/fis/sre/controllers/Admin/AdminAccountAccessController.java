@@ -76,7 +76,7 @@ public class AdminAccountAccessController {
 
 
     public void handleModifyDataAction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountModifyInfo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountInfoAccess.fxml"));
         Stage window = (Stage) btnModifyData.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }

@@ -48,6 +48,11 @@ public class HomePageController {
         Stage window = (Stage) btnAccountInfo.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
+    public void handleAddEventAction(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAddEvent.fxml"));
+        Stage window = (Stage) btnAccountInfo.getScene().getWindow();
+        window.setScene(new Scene(root, 600, 450));
+    }
 
 }
 

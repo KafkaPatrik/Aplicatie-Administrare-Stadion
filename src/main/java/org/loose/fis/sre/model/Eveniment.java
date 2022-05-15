@@ -32,6 +32,7 @@ public class Eveniment{
         this.event_Location =event_Location;
         this.event_Date =event_Date;
         this.event_Description =event_Description;
+        this.event_Id=event_Id;
     }
 
     public Eveniment() {
