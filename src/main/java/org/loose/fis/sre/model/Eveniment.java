@@ -14,15 +14,11 @@ public class Eveniment{
     public void set_event_Id(int event_Id) {
         this.event_Id =event_Id;
     }
-    public void set_event_max_participants(int event_max_participants) {
-        this.event_max_participants =event_max_participants;
-    }
+    public void set_event_max_participants(int event_max_participants){this.event_max_participants =event_max_participants;}
     public void set_event_Title(String event_Title) {
         this.event_Title =event_Title;
     }
-    public void set_event_Location(String event_Location) {
-        this.event_Location =event_Location;
-    }
+    public void set_event_Location(String event_Location) {this.event_Location =event_Location;}
     public void set_event_Date(String event_Date) {
         this.event_Date =event_Date;
     }

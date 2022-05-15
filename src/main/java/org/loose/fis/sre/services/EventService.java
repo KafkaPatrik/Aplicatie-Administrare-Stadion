@@ -2,99 +2,56 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
-import org.loose.fis.sre.model.User;
+
 import org.loose.fis.sre.model.Eveniment;
+
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
 import java.util.Objects;
-import static org.loose.fis.sre.services.FileSystemService.getPathToFile;/*
+
+import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
+
 public class EventService {
 
-    private static ObjectRepository<Eveniment> userRepository;
+    private static ObjectRepository<Eveniment> eventRepository;
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("users-database.db").toFile())
                 .openOrCreate("test", "test");
 
-        userRepository = database.getRepository(User.class);
+        eventRepository = database.getRepository(Eveniment.class);
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
-        checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
+    public static void addEvent(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description){
+        eventRepository.insert(new Eveniment(event_Id,event_max_participants,event_Title,event_Location,event_Date,event_Description));
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
-        for (User user : userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()))
-                throw new UsernameAlreadyExistsException(username);
-        }
-    }
-
-    private static String encodePassword(String salt, String password) {
-        MessageDigest md = getMessageDigest();
-        md.update(salt.getBytes(StandardCharsets.UTF_8));
-
-        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
-
-        // This is the way a password should be encoded when checking the credentials
-        return new String(hashedPassword, StandardCharsets.UTF_8)
-                .replace("\"", ""); //to be able to save in JSON format
-    }
-
-    private static MessageDigest getMessageDigest() {
-        MessageDigest md;
-        try {
-            md = MessageDigest.getInstance("SHA-512");
-        } catch (NoSuchAlgorithmException e) {
-            throw new IllegalStateException("SHA-512 does not exist!");
-        }
-        return md;
-    }
-
-
-    public static String validateLogin(String username, String password) {
-        for (User user : userRepository.find()) {
-            if(username.equals(user.getUsername()))
-            {   String encodedPassword=encodePassword(username,password);
-                if (encodedPassword.equals(user.getPassword())) {
-                    return "Valid";
-                }
-            }
-        }
-        return "Invalid";
-    }
-
-
-    public static boolean modifyClientAccountInfo (String username, String password, String email, String firstName, String lastName, String phoneNumber) {
-        for (User user : userRepository.find()) {
-            if(username.equals(user.getUsername()))
-            {   String encodedPassword=encodePassword(username,password);
-                if (encodedPassword.equals(user.getPassword())) {
-                    user.setEmail(email);
-                    user.setFirstName(firstName);
-                    user.setLastName(lastName);
-                    user.setPhoneNumber(phoneNumber);
-                    userRepository.update(user);
+    public static boolean modifyEventInfo (int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description)
+    {
+        for (Eveniment eveniment : eventRepository.find()) {
+            if(event_Id==eveniment.get_event_Id())
+            {
+                eveniment.set_event_Id(event_Id);
+                eveniment.set_event_max_participants(event_max_participants);
+                eveniment.set_event_Title(event_Title);
+                eveniment.set_event_Location(event_Location);
+                eveniment. set_event_Date(event_Date);
+                eveniment.set_event_Description(event_Description);
+                    eventRepository.update(eveniment);
                     return true;
-                }
             }
         }
         return false;
     }
 
-    public static User returnCurrentUser (String username, String password){
-        for (User user : userRepository.find()) {
-            if(username.equals(user.getUsername()))
-            {   String encodedPassword=encodePassword(username,password);
-                if (encodedPassword.equals(user.getPassword())) {
-                    return user;
-                }
+    public static Eveniment returnCurrentEvent (int eventId){
+        for (Eveniment eveniment : eventRepository.find()) {
+            if(eventId==eveniment.get_event_Id())
+            {
+                    return eveniment;
             }
         }
         return null;
     }
-}*/
+}
