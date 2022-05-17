@@ -6,9 +6,10 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.model.Eveniment;
 
 import java.nio.charset.StandardCharsets;
-
+import javafx.collections.ObservableList;
 import java.util.Objects;
 import org.loose.fis.sre.exceptions.EventAlreadyExistsException;
+import javafx.collections.FXCollections;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
@@ -61,5 +62,19 @@ public class EventService {
             if (event_Id==eveniment.get_event_Id())
                 throw new EventAlreadyExistsException(event_Id);
         }
+    }
+    public static ObservableList<String> getTitleList() {
+        ObservableList<String> s=FXCollections.observableArrayList();
+        for (Eveniment event : eventRepository.find()) {
+            s.add(event.get_event_Title());
+        }
+       return s;
+    }
+    public static Eveniment returnEventByTitle(String title){
+        for (Eveniment event : eventRepository.find()) {
+            if(Objects.equals(title, event.get_event_Title()))
+                return event;
+        }
+        return null;
     }
 }

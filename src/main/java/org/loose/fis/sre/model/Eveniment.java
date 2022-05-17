@@ -44,13 +44,13 @@ public class Eveniment{
         return event_max_participants;
     }
 
-    public String get_event_Title(String username) {return event_Title;}
+    public String get_event_Title() {return event_Title;}
 
     public String get_event_Location() {
         return event_Date;
     }
 
-    public String get_event_Date(String password) {return event_Date;}
+    public String get_event_Date() {return event_Date;}
 
     public String get_event_Description() {return event_Description;}
 

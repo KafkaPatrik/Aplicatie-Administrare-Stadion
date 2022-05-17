@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -28,14 +27,6 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
-        <AnchorPane layoutX="51.0" layoutY="137.0" prefHeight="260.0" prefWidth="520.0" style="-fx-background-color: white; -fx-opacity: 60%;">
-            <children>
-                <ScrollBar layoutX="499.0" layoutY="6.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="14.4" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="499.0" AnchorPane.topAnchor="6.0" />
-            </children>
-            <effect>
-                <Glow level="0.5" />
-            </effect>
-        </AnchorPane>
         <ImageView fitHeight="69.0" fitWidth="253.0" layoutX="187.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@Images/title.png" />
@@ -46,5 +37,20 @@
                 <Font name="System Bold" size="15.0" />
             </font>
       </Button>
+      <ListView fx:id="list" layoutX="45.0" layoutY="199.0" prefHeight="194.0" prefWidth="253.0" />
+        <Button fx:id="btnShowList" layoutX="45.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleCreateListAction" prefHeight="31.0" prefWidth="207.0" style="-fx-background-color: #55c3fe;" text="Vizioneaza Evenimente" textFill="#fafafa" visible="true">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+        </Button>
+      <Text fx:id="selectionMessage" fill="WHITE" layoutX="346.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font></Text>
+        <Button fx:id="btnShowSelection" layoutX="348.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleShowSelectionAction" prefHeight="31.0" prefWidth="231.0" style="-fx-background-color: #55c3fe;" text="Afiseaza Evenimentul Selectat" textFill="#fafafa" visible="true">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>
