@@ -39,6 +39,7 @@ public class HomePageController {
     @FXML
     private ListView<String> list;
     private ObservableList<String> items=FXCollections.observableArrayList();
+    public static Eveniment current_selected_event;
 
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
@@ -81,6 +82,15 @@ public class HomePageController {
         selection=list.getSelectionModel().getSelectedItem();
         selection="Ati selectat:" + selection;
         selectionMessage.setText(selection);
+    }
+    public void handleBuyTicketAction(){
+        String event_title;
+        event_title=list.getSelectionModel().getSelectedItem();
+        if(EventService.returnEventByTitle(event_title)!=null)
+        current_selected_event=EventService.returnEventByTitle(event_title);
+        else
+            System.out.println("ERROR:No event with the title "+event_title+" was found in the database");
+        //System.out.println("TEST CURRENT EVENT "+ current_selected_event.get_event_Title());
     }
 
 

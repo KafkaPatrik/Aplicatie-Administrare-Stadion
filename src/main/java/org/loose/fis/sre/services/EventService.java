@@ -70,4 +70,11 @@ public class EventService {
         }
        return s;
     }
+    public static Eveniment returnEventByTitle(String title){
+        for (Eveniment event : eventRepository.find()) {
+            if(Objects.equals(title, event.get_event_Title()))
+                return event;
+        }
+        return null;
+    }
 }
