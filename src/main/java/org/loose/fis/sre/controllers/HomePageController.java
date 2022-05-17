@@ -8,6 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.loose.fis.sre.model.User;
+import org.loose.fis.sre.services.EventService;
+import org.loose.fis.sre.model.Eveniment;
+import java.util.Objects;
 import java.io.IOException;
 import javafx.scene.text.Text;
 
@@ -69,7 +72,8 @@ public class HomePageController {
         window.setScene(new Scene(root, 600, 450));
     }
     public void handleCreateListAction(){
-        items.addAll("String1","String2","String3");
+        items.removeAll();
+        items=EventService.getTitleList();
         list.setItems(items);
     }
     public void handleShowSelectionAction(){
