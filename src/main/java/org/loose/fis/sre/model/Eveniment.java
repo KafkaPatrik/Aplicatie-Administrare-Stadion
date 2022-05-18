@@ -10,6 +10,8 @@ public class Eveniment{
     private String event_Location;
     private String event_Date;
     private String event_Description;
+    private int event_ParkingPrice;
+    //private String event_Category;
 
     public void set_event_Id(int event_Id) {
         this.event_Id =event_Id;
@@ -25,14 +27,22 @@ public class Eveniment{
     public void set_event_Description(String event_Description) {
         this.event_Description =event_Description;
     }
+    public void set_event_ParkingPrice(int event_ParkingPrice) {
+        this.event_ParkingPrice =event_ParkingPrice;
+    }
+   /* public void event_Category(String event_Category) {
+        this.event_Category =event_Category;
+    }*/
 
-    public Eveniment(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description) {
+    public Eveniment(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_ParkingPrice) {
         this.event_max_participants =event_max_participants;
         this.event_Title =event_Title;
         this.event_Location =event_Location;
         this.event_Date =event_Date;
         this.event_Description =event_Description;
         this.event_Id=event_Id;
+        this.event_ParkingPrice=event_ParkingPrice;
+       // this.event_Category=event_Category;
     }
 
     public Eveniment() {
@@ -53,6 +63,10 @@ public class Eveniment{
     public String get_event_Date() {return event_Date;}
 
     public String get_event_Description() {return event_Description;}
+
+    public int event_ParkingPrice() {return event_ParkingPrice;}
+
+   // public String event_Category() {return event_Category;}
 
     @Override
     public boolean equals(Object o) {
