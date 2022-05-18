@@ -71,11 +71,17 @@
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
-        <Text fx:id="message" fill="WHITE" layoutX="416.0" layoutY="146.0" text="Introduceti datele nesare si apasati butonul adauga pentru a adauga un eveniment nou." textAlignment="CENTER" wrappingWidth="170.59998474121096">
+        <Text fx:id="message" fill="WHITE" layoutX="408.0" layoutY="150.0" text="Introduceti datele nesare si apasati butonul adauga pentru a adauga un eveniment nou." textAlignment="CENTER" wrappingWidth="170.59998474121096">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
       <TextField fx:id="participantsField" layoutX="188.0" layoutY="177.0" />
+      <Label layoutX="55.0" layoutY="418.0" text="Pret Parcare:" textFill="#fafafa">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="parkingField" layoutX="188.0" layoutY="414.0" />
     </children>
 </AnchorPane>

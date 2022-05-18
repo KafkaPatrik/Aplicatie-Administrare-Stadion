@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Admin.AdminAddEventController">
     <children>
-        <ImageView fitHeight="504.0" fitWidth="675.0" layoutX="-48.0" layoutY="-53.0" pickOnBounds="true" smooth="false">
+        <ImageView fitHeight="504.0" fitWidth="675.0" layoutX="-48.0" layoutY="-49.0" pickOnBounds="true" smooth="false">
             <image>
                 <Image url="@Images/Gradient-Abstract-Background.jpg" />
             </image>
@@ -66,16 +66,22 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
-        <Text fx:id="modifiedMessage" fill="WHITE" layoutX="470.0" layoutY="361.0" textAlignment="CENTER" wrappingWidth="113.59999999999997">
+        <Text fx:id="modifiedMessage" fill="WHITE" layoutX="445.0" layoutY="300.0" textAlignment="CENTER" wrappingWidth="112.0">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
-        <Text fx:id="message" fill="WHITE" layoutX="396.0" layoutY="159.0" text="Introduceti datele nesare si apasati butonul adauga pentru a adauga un eveniment nou." textAlignment="CENTER" wrappingWidth="170.59998474121096">
+        <Text fx:id="message" fill="WHITE" layoutX="408.0" layoutY="150.0" text="Introduceti datele nesare si apasati butonul adauga pentru a adauga un eveniment nou." textAlignment="CENTER" wrappingWidth="170.59998474121096">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
       <TextField fx:id="participantsField" layoutX="188.0" layoutY="177.0" />
+      <Label layoutX="55.0" layoutY="418.0" text="Pret Parcare:" textFill="#fafafa">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="parkingField" layoutX="188.0" layoutY="414.0" />
     </children>
 </AnchorPane>
