@@ -40,6 +40,8 @@ public class AdminAddEventController {
     private TextField parkingPriceField;
     @FXML
     private TextField parkingSpotsField;
+    @FXML
+    private TextField ticketPriceField;
 
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
@@ -63,9 +65,10 @@ public class AdminAddEventController {
         String description_data = descriptionField.getText();
         int parking_price = Integer.parseInt(parkingPriceField.getText());
         int max_Parking_Spots = Integer.parseInt(parkingSpotsField.getText());
+        int ticketPrice=Integer.parseInt(ticketPriceField.getText());
 
         try {
-            EventService.addEvent(id_data,partic_data,title_data,location_data,date_data,description_data, max_Parking_Spots, parking_price);
+            EventService.addEvent(id_data,partic_data,title_data,location_data,date_data,description_data, max_Parking_Spots, parking_price,ticketPrice);
             modifiedMessage.setText("Eveniment adăugat cu succes!");
         } catch (EventAlreadyExistsException e) {
             modifiedMessage.setText(e.getMessage());
