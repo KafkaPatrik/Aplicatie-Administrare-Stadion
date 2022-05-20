@@ -67,7 +67,10 @@ public class ViewConcertTicketController {
             nameText.setText("Nume Persoană: "+ticket.getTicketOwnerName());
             phoneNumberText.setText("Nr. Telefon: "+ticket.getPhoneNumber());
             purchaseDateText.setText("Data și Ora Cumpărării: "+ticket.getPurchaseDateTimeStamp());
-            parkingText.setText("Loc Parcare Nr.: #"+ticket.getParkingSpot());
+            if (ticket.isHasParkingSpot()){
+                parkingText.setText("Loc Parcare Nr: #"+ticket.getParkingSpot());
+            }
+            else parkingText.setText("");
         }
 
         public void handleLoggingOut(ActionEvent actionEvent) throws IOException {

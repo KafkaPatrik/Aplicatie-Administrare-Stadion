@@ -68,18 +68,18 @@ public class ViewTicketsHistoryController {
             String tmp[] = selectedItem.split(" ",2);
             String ticketID = tmp[0];
             Ticket ticket = TicketService.returnTicket(ticketID);
-            BuyConcertTicketController.setCurrentTicket(ticketID);
             Eveniment eveniment = EventService.returnCurrentEvent(ticket.getId_event());
             if(eveniment!=null) {
                     String arr[] = tmp[1].split(" ", 2);
                 if (arr[0].toUpperCase(Locale.ROOT).equals("CONCERT")){
-                    System.out.println("E concert");
+                    BuyConcertTicketController.setCurrentTicket(ticketID);
                     BuyConcertTicketController.setEvent(eveniment);
                     Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewConcertTicket.fxml"));
                     Stage window = (Stage) btnViewTicket.getScene().getWindow();
                     window.setScene(new Scene(root, 600, 400));
                 }
                 else if (arr[0].toUpperCase(Locale.ROOT).equals("MECI")) {
+                    BuyMatchTicketController.setCurrentTicket(ticketID);
                     BuyMatchTicketController.setEvent(eveniment);
                     Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewMatchTicket.fxml"));
                     Stage window = (Stage) btnViewTicket.getScene().getWindow();
