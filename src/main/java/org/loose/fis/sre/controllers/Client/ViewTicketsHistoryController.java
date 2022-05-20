@@ -91,6 +91,9 @@ public class ViewTicketsHistoryController {
             }
         }
 
+        public void handleModifyTicketAction(ActionEvent actionEvent) {
+
+        }
 }
 
 
