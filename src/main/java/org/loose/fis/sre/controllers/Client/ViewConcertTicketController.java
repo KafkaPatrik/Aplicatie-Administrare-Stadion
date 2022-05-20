@@ -63,11 +63,11 @@ public class ViewConcertTicketController {
             gateText.setText(ticket.getCategory().toUpperCase(Locale.ROOT));
             String arr[] = event.get_event_Title().split(" ", 2);
             artistName.setText(arr[1]);
-            descriptionText.setText(event.get_event_Description());
-            nameText.setText(ticket.getTicketOwnerName());
-            phoneNumberText.setText(ticket.getPhoneNumber());
-            purchaseDateText.setText(ticket.getPurchaseDateTimeStamp());
-            parkingText.setText(ticket.getParkingSpot());
+            descriptionText.setText("Descriere: "+event.get_event_Description());
+            nameText.setText("Nume Persoană: "+ticket.getTicketOwnerName());
+            phoneNumberText.setText("Nr. Telefon: "+ticket.getPhoneNumber());
+            purchaseDateText.setText("Data și Ora Cumpărării: "+ticket.getPurchaseDateTimeStamp());
+            parkingText.setText("Loc Parcare Nr.: #"+ticket.getParkingSpot());
         }
 
         public void handleLoggingOut(ActionEvent actionEvent) throws IOException {

@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="380.0" prefWidth="602.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.ViewConcertTicketController">
+<AnchorPane prefHeight="410.0" prefWidth="566.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.ViewConcertTicketController">
     <children>
-        <ImageView fitHeight="451.0" fitWidth="649.0" layoutX="-48.0" layoutY="-53.0" pickOnBounds="true" smooth="false">
+        <ImageView fitHeight="463.0" fitWidth="649.0" layoutX="-48.0" layoutY="-53.0" pickOnBounds="true" smooth="false">
             <image>
                 <Image url="@Images/Gradient-Abstract-Background.jpg" />
             </image>
@@ -70,7 +70,7 @@
                 <Font name="Arial Black" size="30.0" />
             </font>
         </Label>
-      <Label fx:id="purchaseDateText" layoutX="41.0" layoutY="306.0" text="Data și Ora Cumpărării:" textFill="#fafafa">
+      <Label fx:id="purchaseDateText" layoutX="301.0" layoutY="327.0" text="Data și Ora Cumpărării:" textFill="#fafafa">
          <font>
             <Font name="SansSerif Bold" size="13.0" />
          </font>
@@ -85,12 +85,12 @@
             <Font name="SansSerif Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="descriptionText" layoutX="446.0" layoutY="301.0" prefHeight="78.0" prefWidth="127.0" text="Descriere: " textFill="#fafafa">
+      <Label fx:id="descriptionText" alignment="TOP_LEFT" layoutX="40.0" layoutY="306.0" prefHeight="16.0" prefWidth="426.0" text="Descriere: " textAlignment="JUSTIFY" textFill="#fafafa">
          <font>
             <Font name="SansSerif Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="parkingText" layoutX="231.0" layoutY="332.0" text="Loc Parcare:" textFill="#fafafa">
+      <Label fx:id="parkingText" layoutX="301.0" layoutY="354.0" text="Loc Parcare:" textFill="#fafafa">
          <font>
             <Font name="SansSerif Bold" size="13.0" />
          </font>
