@@ -48,7 +48,6 @@ public class ClientHomePageController {
         list.setItems(items);
     }
 
-
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         Stage window = (Stage) btnLogOut.getScene().getWindow();

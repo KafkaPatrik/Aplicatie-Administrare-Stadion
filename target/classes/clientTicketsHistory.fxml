@@ -33,7 +33,7 @@
             </image>
         </ImageView>
         <ListView fx:id="list" layoutX="58.0" layoutY="126.0" prefHeight="239.0" prefWidth="510.0" />
-        <Text fx:id="selectionMessage" fill="WHITE" layoutX="346.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
+        <Text fx:id="message" fill="WHITE" layoutX="139.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font></Text>

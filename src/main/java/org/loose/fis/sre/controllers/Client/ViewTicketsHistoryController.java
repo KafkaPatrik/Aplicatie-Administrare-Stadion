@@ -18,6 +18,7 @@ import org.loose.fis.sre.services.EventService;
 import org.loose.fis.sre.services.TicketService;
 
 import java.io.IOException;
+import java.security.MessageDigest;
 import java.util.Locale;
 
 public class ViewTicketsHistoryController {
@@ -33,14 +34,15 @@ public class ViewTicketsHistoryController {
         @FXML
         private ListView<String> list;
         @FXML
+        private Text message;
+        @FXML
         private ObservableList<String> items= FXCollections.observableArrayList();
 
-        /*public void initialize(){
+        public void initialize(){
             items.removeAll();
             items= TicketService.getUserTicketsList(LoginController.current_user);
             list.setItems(items);
-        }*/
-
+        }
 
         public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
@@ -62,22 +64,30 @@ public class ViewTicketsHistoryController {
         }
 
         public void handleViewTicketAction(ActionEvent actionEvent) throws IOException {
-            String eventTitle = list.getSelectionModel().getSelectedItem();
-            Eveniment eveniment = EventService.returnEventByTitle(eventTitle);
+            String selectedItem = list.getSelectionModel().getSelectedItem();
+            String tmp[] = selectedItem.split(" ",2);
+            String ticketID = tmp[0];
+            Ticket ticket = TicketService.returnTicket(ticketID);
+            BuyConcertTicketController.setCurrentTicket(ticketID);
+            Eveniment eveniment = EventService.returnCurrentEvent(ticket.getId_event());
             if(eveniment!=null) {
-                String arr[] = eventTitle.split(" ", 2);
+                    String arr[] = tmp[1].split(" ", 2);
                 if (arr[0].toUpperCase(Locale.ROOT).equals("CONCERT")){
+                    System.out.println("E concert");
                     BuyConcertTicketController.setEvent(eveniment);
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("concertTicket.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewConcertTicket.fxml"));
                     Stage window = (Stage) btnViewTicket.getScene().getWindow();
-                    window.setScene(new Scene(root, 600, 287));
+                    window.setScene(new Scene(root, 600, 400));
                 }
                 else if (arr[0].toUpperCase(Locale.ROOT).equals("MECI")) {
                     BuyMatchTicketController.setEvent(eveniment);
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("matchTicket.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewMatchTicket.fxml"));
                     Stage window = (Stage) btnViewTicket.getScene().getWindow();
-                    window.setScene(new Scene(root, 600, 287));
+                    window.setScene(new Scene(root, 600, 400));
                 }
+            }
+            else {
+                message.setText("Există o eroare, încercați mai târziu!");
             }
         }
 

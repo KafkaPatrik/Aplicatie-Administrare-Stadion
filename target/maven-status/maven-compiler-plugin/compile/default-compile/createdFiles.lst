@@ -22,4 +22,5 @@ org\loose\fis\sre\model\Ticket.class
 org\loose\fis\sre\controllers\AdminHomePageController.class
 org\loose\fis\sre\controllers\Client\MatchTicketController.class
 org\loose\fis\sre\controllers\ClientHomePageController.class
+org\loose\fis\sre\controllers\Client\ViewConcertTicketController.class
 org\loose\fis\sre\services\UserService.class
