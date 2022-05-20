@@ -88,7 +88,6 @@ public class BuyConcertTicketController {
         window.setScene(new Scene(root, 600, 287));
     }
 
-
     public static Eveniment getEvent() {
         return event;
     }
