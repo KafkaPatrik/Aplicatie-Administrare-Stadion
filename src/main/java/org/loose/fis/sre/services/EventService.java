@@ -25,9 +25,9 @@ public class EventService {
         eventRepository = database.getRepository(Eveniment.class);
     }
 
-    public static void addEvent(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_ParkingPrice)throws EventAlreadyExistsException{
+    public static void addEvent(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description, int maxParkingSpots, int parkingPrice) throws EventAlreadyExistsException{
         checkEventDoesNotAlreadyExist(event_Id);
-        eventRepository.insert(new Eveniment(event_Id,event_max_participants,event_Title,event_Location,event_Date,event_Description,event_ParkingPrice));
+        eventRepository.insert(new Eveniment(event_Id,event_max_participants,event_Title,event_Location,event_Date,event_Description, maxParkingSpots, parkingPrice));
     }
 
     public static boolean modifyEventInfo (int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_ParkingPrice)
@@ -41,7 +41,6 @@ public class EventService {
                 eveniment.set_event_Location(event_Location);
                 eveniment.set_event_Date(event_Date);
                 eveniment.set_event_Description(event_Description);
-                eveniment.set_event_ParkingPrice(event_ParkingPrice);
                     eventRepository.update(eveniment);
                     return true;
             }
