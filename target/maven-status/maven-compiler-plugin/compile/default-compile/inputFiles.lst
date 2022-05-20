@@ -5,6 +5,7 @@ D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Apl
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\TicketService.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccountModifyInfoController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.java
+D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ModifyTicketController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ConcertTicketController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\TicketAlreadyExistsException.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\UserService.java

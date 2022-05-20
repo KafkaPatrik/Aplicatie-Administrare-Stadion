@@ -32,6 +32,8 @@ public class ViewTicketsHistoryController {
         @FXML
         private Button btnAccountInfo;
         @FXML
+        private Button btnModifyTicket;
+        @FXML
         private ListView<String> list;
         @FXML
         private Text message;
@@ -91,8 +93,17 @@ public class ViewTicketsHistoryController {
             }
         }
 
-        public void handleModifyTicketAction(ActionEvent actionEvent) {
-
+        public void handleModifyTicketAction(ActionEvent actionEvent) throws IOException {
+            String selectedItem = list.getSelectionModel().getSelectedItem();
+            String tmp[] = selectedItem.split(" ",2);
+            String ticketID = tmp[0];
+            Ticket ticket = TicketService.returnTicket(ticketID);
+            Eveniment eveniment = EventService.returnCurrentEvent(ticket.getId_event());
+            BuyConcertTicketController.setCurrentTicket(ticketID);
+            BuyConcertTicketController.setEvent(eveniment);
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("modifyTicket.fxml"));
+            Stage window = (Stage) btnModifyTicket.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 400));
         }
 }
 
