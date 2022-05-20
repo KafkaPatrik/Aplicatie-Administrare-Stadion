@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="loginPane" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.LoginController">
+    <children>
+        <ImageView fitHeight="504.0" fitWidth="675.0" layoutX="-48.0" layoutY="-53.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="@Images/Gradient-Abstract-Background.jpg" />
+            </image>
+        </ImageView>
+            <Label layoutX="138.0" layoutY="191.0" text="Nume utilizator:" textFill="WHITE">
+                <font>
+                    <Font name="SansSerif Bold" size="15.0" />
+                </font>
+            </Label>
+            <TextField fx:id="usernameTextField" layoutX="339.0" layoutY="187.0" promptText="Username" />
+            <Label layoutX="141.0" layoutY="240.0" text="Parolă:" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="339.0" layoutY="238.0" promptText="Password" />
+            <Button fx:id="btnLogIn" layoutX="400.0" layoutY="318.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #55c3fe;" text="Login" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Text fx:id="loginMessage" fill="WHITE" layoutX="116.0" layoutY="291.0" textAlignment="CENTER" wrappingWidth="367.59998474121096">
+                <font>
+                    <Font name="Britannic Bold" size="14.0" />
+                </font>
+            </Text>
+            <Button fx:id="btnSingUp" layoutX="138.0" layoutY="318.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #9d49f6;" text="Inregistrare" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+      <ImageView fitHeight="69.0" fitWidth="253.0" layoutX="187.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/title.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
