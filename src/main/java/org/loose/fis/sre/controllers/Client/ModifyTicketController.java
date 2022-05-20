@@ -86,8 +86,13 @@ public class ModifyTicketController {
     }
 
 
-    public void handleSaveDataAction(ActionEvent actionEvent) {
-
-
+    public void handleSaveDataAction(ActionEvent actionEvent) throws IOException {
+        Eveniment eveniment = BuyConcertTicketController.getEvent();
+        Ticket ticket = BuyConcertTicketController.getCurrentTicket();
+        String newCategory = (String) categorySelector.getValue();
+        ticket.changeCategory(newCategory);
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientTicketsHistory.fxml"));
+        Stage window = (Stage) btnHomePage.getScene().getWindow();
+        window.setScene(new Scene(root, 600, 450));
     }
 }

@@ -2,6 +2,7 @@ package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
 import org.loose.fis.sre.controllers.LoginController;
+import org.loose.fis.sre.services.TicketService;
 
 public class Ticket {
     @Id
@@ -83,4 +84,8 @@ public class Ticket {
         else return false;
     }
 
+    public void changeCategory(String newCategory) {
+        this.category=newCategory;
+        TicketService.updateTicket(this);
+    }
 }
