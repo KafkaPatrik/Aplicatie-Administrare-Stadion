@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.FileSystemService;
+import org.loose.fis.sre.services.TicketService;
 import org.loose.fis.sre.services.UserService;
 import org.loose.fis.sre.services.EventService;
 
@@ -20,6 +21,7 @@ public class Main extends Application {
         initDirectory();
         UserService.initDatabase();
         EventService.initDatabase();
+        TicketService.initTicketsDatabase();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Aplicatie Administrare Stadion");
         primaryStage.setScene(new Scene(root, 600, 450));
