@@ -88,7 +88,7 @@ public class BuyMatchTicketController {
         String categoryString = (String) categorySelector.getValue();
         boolean parkingValue = false;
         String parkingSpot ="";
-        if (((String)categorySelector.getValue()).equals("Doresc")) {
+        if (((String) parkingSelector.getValue()).equals("Doresc")) {
             parkingValue = true;
             event.updateReservedParkingSpots();
             parkingSpot = ""+event.getReservedParkingSpots();

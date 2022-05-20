@@ -26,7 +26,6 @@ public class TicketService {
     public static void addTicket(String id_code, String ticketOwnerName, String phoneNumber, String category, double price, boolean hasParkingSpot, String parkingSpot, int id_event) throws TicketAlreadyExistsException {
         checkTicketDoesNotAlreadyExist(id_code);
         String purchaseDateTimeStamp = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
-        System.out.println(purchaseDateTimeStamp);
         ticketRepository.insert(new Ticket(id_code, ticketOwnerName, phoneNumber, purchaseDateTimeStamp, category, price, hasParkingSpot, parkingSpot, id_event));
     }
 

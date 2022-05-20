@@ -1,6 +1,7 @@
 package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
+import org.loose.fis.sre.services.EventService;
 
 public class Eveniment{
     @Id
@@ -40,6 +41,8 @@ public class Eveniment{
         this.event_Id=event_Id;
         this.parkingPrice=parkingPrice;
         this.maxParkingSpots=maxParkingSpots;
+        this.soldTickets=0;
+        this.reservedParkingSpots=0;
     }
 
     public Eveniment() {
@@ -61,6 +64,10 @@ public class Eveniment{
 
     public String get_event_Description() {return event_Description;}
 
+    public int getSoldTickets() { return soldTickets; }
+
+    public int getReservedParkingSpots() { return reservedParkingSpots; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,6 +84,16 @@ public class Eveniment{
         result = 31 * result + (event_Date != null ? event_Date.hashCode() : 0);
         result = 31 * result + (event_Location != null ? event_Location.hashCode() : 0);
         return result;
+    }
+
+    public void updateEventSoldTickets()
+    {   this.soldTickets++;
+        EventService.updateEvent(this);
+    }
+
+    public void updateReservedParkingSpots() {
+        this.reservedParkingSpots++;
+        EventService.updateEvent(this);
     }
 
 }
