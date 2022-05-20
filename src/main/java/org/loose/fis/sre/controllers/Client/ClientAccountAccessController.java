@@ -50,7 +50,7 @@ public class ClientAccountAccessController {
     }
 
     public void handleHomePageAction (ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageClient.fxml"));
         Stage window = (Stage) btnHomePage.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }

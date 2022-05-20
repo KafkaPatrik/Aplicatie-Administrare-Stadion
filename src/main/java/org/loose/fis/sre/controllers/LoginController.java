@@ -48,7 +48,7 @@ public class LoginController {
             if(current_user.getRole().equals("Administrator"))
                 root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageAdmin.fxml"));
             else
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("homePage.fxml"));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("homePageClient.fxml"));
             Stage window = (Stage) btnLogIn.getScene().getWindow();
             window.setScene(new Scene(root, 600, 450));
         }

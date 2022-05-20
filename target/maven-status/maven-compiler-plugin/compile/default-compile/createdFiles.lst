@@ -12,5 +12,6 @@ org\loose\fis\sre\model\Eveniment.class
 org\loose\fis\sre\controllers\Client\ClientAccountAccessController.class
 org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.class
 org\loose\fis\sre\controllers\Admin\AdminAccountModifyInfoController.class
-org\loose\fis\sre\controllers\HomePageController.class
+org\loose\fis\sre\controllers\AdminHomePageController.class
+org\loose\fis\sre\controllers\ClientHomePageController.class
 org\loose\fis\sre\services\UserService.class
