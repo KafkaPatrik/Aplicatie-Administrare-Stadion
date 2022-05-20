@@ -74,13 +74,12 @@ public class BuyConcertTicketController {
         String categoryString = (String) categorySelector.getValue();
         boolean parkingValue = false;
         String parkingSpot ="";
-        if (((String)categorySelector.getValue()).equals("Doresc")) {
+        if (((String) parkingSelector.getValue()).equals("Doresc")) {
             parkingValue = true;
             event.updateReservedParkingSpots();
             parkingSpot = ""+event.getReservedParkingSpots();
         }
         event.updateEventSoldTickets();
-        //EventService.updateEvent(event);
         String id = "#"+event.get_event_Id()+event.getSoldTickets();
         TicketService.addTicket(id, nameString, phoneNumberString, categoryString,150.00 ,parkingValue, parkingSpot, event.get_event_Id());
         setCurrentTicket(id);
@@ -88,7 +87,6 @@ public class BuyConcertTicketController {
         Stage window = (Stage) btnBuyTicket.getScene().getWindow();
         window.setScene(new Scene(root, 600, 287));
     }
-
 
     public static Eveniment getEvent() {
         return event;

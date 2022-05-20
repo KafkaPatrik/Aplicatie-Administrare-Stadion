@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.loose.fis.sre.controllers.Client.BuyConcertTicketController;
+import org.loose.fis.sre.controllers.Client.BuyMatchTicketController;
 import org.loose.fis.sre.services.EventService;
 import org.loose.fis.sre.model.Eveniment;
 
@@ -35,6 +37,8 @@ public class ClientHomePageController {
     private Text selectionMessage;
     @FXML
     private ListView<String> list;
+    @FXML
+    private Button btnBuyTicket;
     @FXML
     private ObservableList<String> items=FXCollections.observableArrayList();
 
@@ -70,6 +74,31 @@ public class ClientHomePageController {
         selection=list.getSelectionModel().getSelectedItem();
         selection="Ati selectat:" + selection;
         selectionMessage.setText(selection);
+    }
+
+    public void handleBuyTicketAction(ActionEvent actionEvent) throws IOException {
+        String eventTitle;
+        eventTitle = list.getSelectionModel().getSelectedItem();
+        Eveniment eveniment = EventService.returnEventByTitle(eventTitle);
+        if(eveniment!=null) {
+            String arr[] = eventTitle.split(" ", 2);
+            if (arr[0].toUpperCase(Locale.ROOT).equals("CONCERT")){
+                BuyConcertTicketController.setEvent(eveniment);
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("buyConcertTicket.fxml"));
+                Stage window = (Stage) btnBuyTicket.getScene().getWindow();
+                window.setScene(new Scene(root, 600, 450));
+            }
+            else if (arr[0].toUpperCase(Locale.ROOT).equals("MECI")) {
+                BuyMatchTicketController.setEvent(eveniment);
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("buyMatchTicket.fxml"));
+                Stage window = (Stage) btnBuyTicket.getScene().getWindow();
+                window.setScene(new Scene(root, 600, 450));
+            }
+        }
+        else
+            System.out.println("ERROR:No event with the title "+eventTitle+" was found in the database");
+        //System.out.println("TEST CURRENT EVENT "+ current_selected_event.get_event_Title());
+
     }
 }
 

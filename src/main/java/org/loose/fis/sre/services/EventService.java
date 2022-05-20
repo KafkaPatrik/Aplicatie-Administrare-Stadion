@@ -77,4 +77,9 @@ public class EventService {
         }
         return null;
     }
+
+    public static void updateEvent(Eveniment eveniment){
+        eventRepository.update(eveniment);
+    }
+
 }
