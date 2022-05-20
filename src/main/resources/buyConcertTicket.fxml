@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="436.0" prefWidth="627.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Client.BuyConcertTicketController">
+    <children>
+        <ImageView fitHeight="504.0" fitWidth="675.0" layoutX="-48.0" layoutY="-53.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="@Images/Gradient-Abstract-Background.jpg" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnLogOut" layoutX="510.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleLoggingOut" style="-fx-background-color: #55c3fe;" text="Log Out" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Label layoutX="289.0" layoutY="130.0" text="Nume:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font></Label>
+        <TextField fx:id="nameField" layoutX="424.0" layoutY="126.0" />
+        <Label layoutX="291.0" layoutY="174.0" text="Nr. Telefon:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="phoneNumberField" layoutX="424.0" layoutY="170.0" />
+        <Label layoutX="291.0" layoutY="267.0" text="Parcare:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="291.0" layoutY="219.0" text="Categorie:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnBuyTicket" layoutX="492.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleBuyTicketAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #55c3fe;" text="Cumpără " textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Text fx:id="modifiedMessage" fill="WHITE" layoutX="470.0" layoutY="361.0" textAlignment="CENTER" wrappingWidth="113.59999999999997">
+            <font>
+                <Font name="SansSerif Bold" size="14.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="452.0" fitWidth="272.0" layoutX="-5.0" pickOnBounds="true" style="-fx-opacity: 80%;">
+            <image>
+                <Image url="@Images/concert.png" />
+            </image></ImageView>
+        <Button fx:id="btnHomePage" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleHomePageAction" style="-fx-background-color: #9d49f6;" text="Acasă" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <ChoiceBox fx:id="parkingSelector" layoutX="423.0" layoutY="263.0" prefWidth="150.0" style="-fx-background-color: #fafafa;">
+        </ChoiceBox>
+        <ChoiceBox fx:id="categorySelector" layoutX="423.0" layoutY="215.0" prefWidth="150.0" style="-fx-background-color: #fafafa;">
+        </ChoiceBox>
+        <Button fx:id="btnCancelAction" layoutX="287.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleCancelAction" prefHeight="31.0" prefWidth="91.0" style="-fx-background-color: #55c3fe;" text="Renunță" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

@@ -42,5 +42,10 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
+        <Button fx:id="btnBuyTicket" layoutX="440.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleBuyTicketAction" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #55c3fe;" text="Cumpără Bilet" textFill="#fafafa" visible="true">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>
