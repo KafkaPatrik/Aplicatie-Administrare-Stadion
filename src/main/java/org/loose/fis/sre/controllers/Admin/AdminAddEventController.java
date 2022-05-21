@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.EventService;
 import org.loose.fis.sre.exceptions.EventAlreadyExistsException;
-
 import java.io.IOException;
 
 public class AdminAddEventController {

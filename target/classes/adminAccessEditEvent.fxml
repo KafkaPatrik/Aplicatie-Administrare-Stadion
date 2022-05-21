@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.Admin.AdminAccessEditEventController">
+    <children>
+        <ImageView fitHeight="504.0" fitWidth="675.0" layoutX="-48.0" layoutY="-49.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="@Images/Gradient-Abstract-Background.jpg" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnHomePage" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleHomePageAction" style="-fx-background-color: #9d49f6;" text="Acasă" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnLogOut" layoutX="510.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleLoggingOut" style="-fx-background-color: #55c3fe;" text="Log Out" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="69.0" fitWidth="253.0" layoutX="187.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Images/title.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="21.0" layoutY="136.0" text="ID:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font></Label>
+        <Label layoutX="23.0" layoutY="180.0" text="Nr. Participanti:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="342.0" layoutY="180.0" text="Locatie:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="342.0" layoutY="135.0" text="Titlu:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="22.0" layoutY="225.0" text="Data:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="342.0" layoutY="225.0" text="Descriere:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnEditEvent" layoutX="416.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleEditEventAction" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Adauga Eveniment" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Text fx:id="modifiedMessage" fill="WHITE" layoutX="416.0" layoutY="362.0" textAlignment="CENTER" wrappingWidth="171.20000000000005">
+            <font>
+                <Font name="SansSerif Bold" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="message" fill="WHITE" layoutX="379.0" layoutY="291.0" text="Introduceți datele, apoi apăsați &quot;Adaugă Eveniment&quot; " textAlignment="CENTER" wrappingWidth="210.59998474121096">
+            <font>
+                <Font name="SansSerif Bold" size="14.0" />
+            </font>
+        </Text>
+        <Label layoutX="22.0" layoutY="274.0" text="Pret Parcare:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="21.0" layoutY="319.0" text="Nr. Locuri Parcare:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="21.0" layoutY="361.0" text="Pret Bilet:" textFill="#fafafa">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+      <Button fx:id="bntViewEventInfo" layoutX="416.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleViewEventInfoAction" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Vizualizeaza date" textFill="#fafafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+        <Label fx:id="ticketPrice_text" layoutX="176.0" layoutY="356.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+            <font>
+                <Font name="SansSerif Bold" size="15.0" />
+            </font>
+        </Label>
+      <Label fx:id="parkingPlaceNr_text" layoutX="176.0" layoutY="314.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="parkingPrice_text" layoutX="176.0" layoutY="269.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="date_text" layoutX="176.0" layoutY="220.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="participants_text" layoutX="176.0" layoutY="175.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="id_text" layoutX="176.0" layoutY="131.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="description_text" layoutX="426.0" layoutY="220.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="location_text" layoutX="426.0" layoutY="175.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="title_text" layoutX="435.0" layoutY="131.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
