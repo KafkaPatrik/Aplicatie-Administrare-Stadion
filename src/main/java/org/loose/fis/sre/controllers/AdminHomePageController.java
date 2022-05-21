@@ -44,6 +44,11 @@ public class AdminHomePageController {
     private ObservableList<String> items=FXCollections.observableArrayList();
     public static Eveniment current_selected_event;
 
+    public void initialize(){
+        items.removeAll();
+        items=EventService.getTitleList();
+        list.setItems(items);
+    }
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         Stage window = (Stage) btnLogOut.getScene().getWindow();
@@ -71,12 +76,6 @@ public class AdminHomePageController {
         items=EventService.getTitleList();
         list.setItems(items);
     }
-    public void initialize(){
-        items.removeAll();
-        items=EventService.getTitleList();
-        list.setItems(items);
-    }
-
     public void handleShowSelectionAction(){
         String selection;
         selection=list.getSelectionModel().getSelectedItem();
@@ -87,10 +86,17 @@ public class AdminHomePageController {
         selectionMessage.setText(selection);
     }
     public void handleEditEventAction(ActionEvent actionEvent)throws IOException{
-        AdminAccessEditEventController.setEvent(current_selected_event);
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccessEditEvent.fxml"));
-        Stage window = (Stage) btnEditEvent.getScene().getWindow();
-        window.setScene(new Scene(root, 600, 450));
+        String selection;
+        selection=list.getSelectionModel().getSelectedItem();
+        current_selected_event=EventService.returnEventByTitle(selection);
+        if(current_selected_event!=null) {
+            AdminAccessEditEventController.setEvent(current_selected_event);
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccessEditEvent.fxml"));
+            Stage window = (Stage) btnEditEvent.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 450));
+        }
+             else
+        System.out.println("WARNING: No event is selected.");
     }
 
 

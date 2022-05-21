@@ -86,11 +86,6 @@
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-      <Button fx:id="bntViewEventInfo" layoutX="416.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleViewEventInfoAction" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Vizualizeaza date" textFill="#fafafa">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
         <Label fx:id="ticketPrice_text" layoutX="176.0" layoutY="356.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
@@ -131,7 +126,7 @@
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="title_text" layoutX="435.0" layoutY="131.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="title_text" layoutX="426.0" layoutY="131.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>

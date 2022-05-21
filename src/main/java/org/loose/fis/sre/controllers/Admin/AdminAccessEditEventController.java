@@ -27,8 +27,6 @@ public class AdminAccessEditEventController {
     @FXML
     private Button btnEditEvent;
     @FXML
-    private Button btnViewEventInfo;
-    @FXML
     private Label id_text;
     @FXML
     private Label participants_text;
@@ -48,6 +46,17 @@ public class AdminAccessEditEventController {
     private Label description_text;
     private static Eveniment event;
 
+    public void initialize(){
+        id_text.setText(Integer.toString(event.get_event_Id()));
+        participants_text.setText(Integer.toString(event.get_event_max_participants()));
+        date_text.setText(event.get_event_Date());
+        parkingPrice_text.setText(Integer.toString(event.getParkingPrice()));
+        parkingPlaceNr_text.setText(Integer.toString(event.getMaxParkingSpots()));
+        ticketPrice_text.setText(Integer.toString(event.getTicketPrice()));
+        title_text.setText(event.get_event_Title());
+        location_text.setText(event.get_event_Location());
+        description_text.setText(event.get_event_Description());
+    }
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         Stage window = (Stage) btnLogOut.getScene().getWindow();
@@ -60,21 +69,6 @@ public class AdminAccessEditEventController {
         window.setScene(new Scene(root, 600, 450));
     }
 
-
-    public void handleViewEventInfoAction(ActionEvent actionEvent) throws IOException {
-       /* id_text.setText(current_event.get());
-        Label participants_text;
-        Label date_text;
-        Label parkingPrice_text;
-        parkingPlaceNr_text;
-        ticketPrice_text;
-        title_text;
-        location_text;
-        description_text;*/
-
-    }
-
-
     public void handleEditEventAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountInfoAccess.fxml"));
         Stage window = (Stage) btnEditEvent.getScene().getWindow();
@@ -85,8 +79,6 @@ public class AdminAccessEditEventController {
     }
 
     public static void setEvent(Eveniment event) {
-
-        //BuyConcertTicketController.event = event;
         AdminAccessEditEventController.event = event;
     }
 }

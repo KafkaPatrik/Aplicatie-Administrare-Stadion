@@ -65,7 +65,7 @@ public class Eveniment{
     public String get_event_Title() {return event_Title;}
 
     public String get_event_Location() {
-        return event_Date;
+        return event_Location;
     }
 
     public String get_event_Date() {return event_Date;}
