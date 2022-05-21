@@ -52,7 +52,7 @@ class LoginTest {
 
 
     @Test
-    void testLog(FxRobot robot) throws IOException {
+    void testLogInAndLogOut(FxRobot robot) throws IOException {
         robot.clickOn("#usernameTextField");
         robot.write(USERNAME);
         robot.clickOn("#passwordField");
