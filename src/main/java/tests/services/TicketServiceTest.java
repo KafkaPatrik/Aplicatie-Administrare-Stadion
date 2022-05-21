@@ -1,8 +1,12 @@
 package tests.services;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
 import org.loose.fis.sre.controllers.LoginController;
+import org.loose.fis.sre.exceptions.EventAlreadyExistsException;
 import org.loose.fis.sre.exceptions.TicketAlreadyExistsException;
 import org.loose.fis.sre.model.Ticket;
 import org.loose.fis.sre.model.User;
@@ -22,10 +26,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TicketServiceTest {
 
     public static final String TICKET = "TicketTest";
+    public static final String EVENT = "event";
     public static final User USER = new User(TICKET,TICKET,"Administrator");;
 
     @BeforeAll
-    static void beforeAll() throws IOException {
+    static void beforeAll() throws IOException, EventAlreadyExistsException {
         Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
@@ -33,6 +38,7 @@ public class TicketServiceTest {
         UserService.initDatabase();
         EventService.initDatabase();
         TicketService.initTicketsDatabase();
+        EventService.addEvent(1,1000,"Concert "+EVENT,EVENT,EVENT,EVENT,100,10);
     }
 
     @AfterAll
@@ -62,7 +68,7 @@ public class TicketServiceTest {
     @Test
     @Order(2)
     void testTicketIsAddedToDatabase() throws TicketAlreadyExistsException {
-        TicketService.addTicket(TICKET,TICKET,TICKET,TICKET,100.0, true,TICKET,100);
+        TicketService.addTicket(TICKET,TICKET,TICKET,TICKET,100.0, true,TICKET,1);
         assertThat(TicketService.getAllTickets()).isNotEmpty();
         assertThat(TicketService.getAllTickets()).size().isEqualTo(1);
         Ticket ticket = TicketService.getAllTickets().get(0);
@@ -100,4 +106,17 @@ public class TicketServiceTest {
         ticket.changeCategory("Cat A");
         assertThat(ticket.getCategory().equals("Cat A"));
     }
+
+    @Test
+    @Order(6)
+    void testClientTicketHistory() {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        items.removeAll();
+        items= TicketService.getUserTicketsList(USER);
+        String arr[] = items.get(0).split(" ", 2);
+        Ticket ticket = TicketService.getAllTickets().get(0);
+        assertThat(arr[0].equals(ticket.getIdCode()));
+    }
+
+
 }

@@ -51,7 +51,7 @@ public class ModifyUserAccountTest {
 
 
     @Test
-    void testBuyTicketFeature(FxRobot robot) throws IOException {
+    void testModifyUserDataFeature(FxRobot robot) throws IOException {
         robot.clickOn("#usernameField");
         robot.write(USERNAME);
         robot.clickOn("#passwordField");
