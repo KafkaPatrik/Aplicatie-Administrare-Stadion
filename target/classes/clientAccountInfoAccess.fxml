@@ -116,5 +116,10 @@
             <Font name="SansSerif Bold" size="14.0" />
          </font>
       </Text>
+        <Button fx:id="btnViewTickets" layoutX="450.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleTicketsHistory" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #55c3fe;" text="Biletele Mele" textFill="#fafafa">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>

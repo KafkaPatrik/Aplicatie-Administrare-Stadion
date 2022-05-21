@@ -29,6 +29,9 @@ public class Ticket {
         this.buyerUsername=LoginController.current_user.getUsername();
     }
 
+    public  Ticket(){
+    }
+
     public String getIdCode() {
         return idCode;
     }
@@ -65,7 +68,12 @@ public class Ticket {
 
     public void setBuyerUsername(String buyerUsername) { this.buyerUsername = buyerUsername; }
 
-    public  Ticket(){
+    public String getPurchaseDateTimeStamp() {
+        return purchaseDateTimeStamp;
+    }
+
+    public int getId_event() {
+        return id_event;
     }
 
     @Override

@@ -100,7 +100,7 @@ public class BuyConcertTicketController {
         return currentTicket;
     }
 
-    private static void setCurrentTicket(String currentTicketId) {
+    public static void setCurrentTicket(String currentTicketId) {
         Ticket current = TicketService.returnTicket(currentTicketId);
         BuyConcertTicketController.currentTicket = current;
     }

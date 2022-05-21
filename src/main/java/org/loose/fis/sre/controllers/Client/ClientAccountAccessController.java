@@ -80,4 +80,10 @@ public class ClientAccountAccessController {
         Stage window = (Stage) btnModifyData.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
+
+    public void handleTicketsHistory(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("clientTicketsHistory.fxml"));
+        Stage window = (Stage) btnModifyData.getScene().getWindow();
+        window.setScene(new Scene(root, 600, 450));
+    }
 }

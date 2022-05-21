@@ -1,9 +1,13 @@
 package org.loose.fis.sre.services;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.TicketAlreadyExistsException;
+import org.loose.fis.sre.model.Eveniment;
 import org.loose.fis.sre.model.Ticket;
+import org.loose.fis.sre.model.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -42,6 +46,17 @@ public class TicketService {
                return ticket;
         }
         return null;
+    }
+
+    public static ObservableList<String> getUserTicketsList(User current_user) {
+        ObservableList<String> userTicketsList = FXCollections.observableArrayList();
+        for (Ticket ticket : ticketRepository.find()) {
+            if (ticket.getBuyerUsername().equals(current_user.getUsername())) {
+                Eveniment eveniment = EventService.returnCurrentEvent(ticket.getId_event());
+                userTicketsList.add(ticket.getIdCode()+" "+eveniment.get_event_Title()+" - "+eveniment.get_event_Description()+" Data cumparare: "+ticket.getPurchaseDateTimeStamp());
+            }
+        }
+        return userTicketsList;
     }
 
 }
