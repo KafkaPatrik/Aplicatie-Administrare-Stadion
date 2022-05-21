@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,20 +32,18 @@ import static org.testfx.assertions.api.Assertions.*;
 class LoginTest {
 
     public static final String USERNAME = "username";
+    public static final String ADMIN = "admin";
     public static final String PASSWORD = "password";
 
-    @BeforeEach
-    void setUp() throws Exception {
+
+    @Start
+    void start(Stage primaryStage) throws Exception {
         Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
         UserService.initDatabase();
         EventService.initDatabase();
         TicketService.initTicketsDatabase();
-    }
-
-    @Start
-    void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Aplicatie Administrare Stadion");
         primaryStage.setScene(new Scene(root, 600, 450));
@@ -53,7 +52,7 @@ class LoginTest {
 
 
     @Test
-    void testLogIn(FxRobot robot) throws IOException {
+    void testLog(FxRobot robot) throws IOException {
         robot.clickOn("#usernameTextField");
         robot.write(USERNAME);
         robot.clickOn("#passwordField");
@@ -61,8 +60,15 @@ class LoginTest {
 
         robot.clickOn("#btnLogIn");
         assertThat(robot.lookup("#selectionMessage").queryText()).hasText("Selectați evenimentul și apăsați afișează");
-    }
+        robot.clickOn("#btnLogOut");
+        robot.clickOn("#usernameTextField");
+        robot.write(ADMIN);
+        robot.clickOn("#passwordField");
+        robot.write(PASSWORD);
 
-
+        robot.clickOn("#btnLogIn");
+        assertThat(robot.lookup("#selectionMessage").queryText()).hasText("Selectați evenimentul și apăsați afișează");
+        robot.clickOn("#btnLogOut");
+        }
 
 }
