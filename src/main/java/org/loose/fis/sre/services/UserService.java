@@ -8,6 +8,7 @@ import org.loose.fis.sre.model.User;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -98,6 +99,10 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public static List<User> getAllUsers() {
+        return userRepository.find().toList();
     }
 
 }

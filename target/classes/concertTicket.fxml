@@ -70,5 +70,10 @@
             <Font name="Arial Black" size="30.0" />
          </font>
       </Label>
+        <Text fx:id="selectionMessage" fill="WHITE" layoutX="346.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
+            <font>
+                <Font name="SansSerif Bold" size="14.0" />
+            </font>
+        </Text>
     </children>
 </AnchorPane>
