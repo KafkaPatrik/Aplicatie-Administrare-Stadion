@@ -11,6 +11,7 @@ import org.loose.fis.sre.model.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
@@ -61,5 +62,9 @@ public class TicketService {
 
     public static void updateTicket(Ticket ticket) {
         ticketRepository.update(ticket);
+    }
+
+    public static List<Ticket> getAllTickets() {
+        return ticketRepository.find().toList();
     }
 }

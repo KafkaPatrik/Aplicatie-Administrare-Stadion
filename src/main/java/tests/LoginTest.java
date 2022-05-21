@@ -7,9 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.loose.fis.sre.services.EventService;
 import org.loose.fis.sre.services.FileSystemService;
@@ -28,6 +26,7 @@ import java.nio.file.Path;
 import static org.testfx.assertions.api.Assertions.*;
 
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(ApplicationExtension.class)
 class LoginTest {
 
@@ -41,9 +40,12 @@ class LoginTest {
         Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
+        FileUtils.cleanDirectory(applicationHomePath.toFile());
         UserService.initDatabase();
         EventService.initDatabase();
         TicketService.initTicketsDatabase();
+        UserService.addUser(ADMIN, PASSWORD, "Administrator");
+        UserService.addUser(USERNAME, PASSWORD, "Client");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Aplicatie Administrare Stadion");
         primaryStage.setScene(new Scene(root, 600, 450));
@@ -61,6 +63,7 @@ class LoginTest {
         robot.clickOn("#btnLogIn");
         assertThat(robot.lookup("#selectionMessage").queryText()).hasText("Selectați evenimentul și apăsați afișează");
         robot.clickOn("#btnLogOut");
+
         robot.clickOn("#usernameTextField");
         robot.write(ADMIN);
         robot.clickOn("#passwordField");
@@ -70,5 +73,7 @@ class LoginTest {
         assertThat(robot.lookup("#selectionMessage").queryText()).hasText("Selectați evenimentul și apăsați afișează");
         robot.clickOn("#btnLogOut");
         }
+
+
 
 }
