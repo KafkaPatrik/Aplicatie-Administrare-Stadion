@@ -30,12 +30,11 @@ public class EventService {
         eventRepository.insert(new Eveniment(event_Id,event_max_participants,event_Title,event_Location,event_Date,event_Description, maxParkingSpots, parkingPrice,ticketPrice));
     }
 
-    public static boolean modifyEventInfo (int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_ParkingPrice,int event_TicketPrice)
+    public static boolean modifyEventInfo (int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_ParkingPrice,int event_TicketPrice,int event_ParkingSpots)
     {
         for (Eveniment eveniment : eventRepository.find()) {
             if(event_Id==eveniment.get_event_Id())
             {
-                eveniment.set_event_Id(event_Id);
                 eveniment.set_event_max_participants(event_max_participants);
                 eveniment.set_event_Title(event_Title);
                 eveniment.set_event_Location(event_Location);
@@ -43,7 +42,8 @@ public class EventService {
                 eveniment.set_event_Description(event_Description);
                 eveniment.set_event_parkingPrice(event_ParkingPrice);
                 eveniment.set_event_ticketPrice(event_TicketPrice);
-                    eventRepository.update(eveniment);
+                eveniment.set_event_maxParkingSpots(event_ParkingSpots);
+                eventRepository.update(eveniment);
                     return true;
             }
         }

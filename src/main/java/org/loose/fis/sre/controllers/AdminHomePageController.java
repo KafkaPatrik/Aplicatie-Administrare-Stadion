@@ -30,6 +30,8 @@ public class AdminHomePageController {
     @FXML
     private Button btnHomePage;
     @FXML
+    private Button btnRefresh;
+    @FXML
     private Button btnEditEvent;
     @FXML
     private Button btnAccountInfo;
@@ -40,8 +42,8 @@ public class AdminHomePageController {
     @FXML
     private Text selectionMessage;
     @FXML
-    private ListView<String> list;
-    private ObservableList<String> items=FXCollections.observableArrayList();
+    public ListView<String> list;
+    public ObservableList<String> items=FXCollections.observableArrayList();
     public static Eveniment current_selected_event;
 
     public void initialize(){
@@ -70,11 +72,6 @@ public class AdminHomePageController {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAddEvent.fxml"));
         Stage window = (Stage) btnAccountInfo.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
-    }
-    public void handleCreateListAction(){
-        items.removeAll();
-        items=EventService.getTitleList();
-        list.setItems(items);
     }
     public void handleShowSelectionAction(){
         String selection;

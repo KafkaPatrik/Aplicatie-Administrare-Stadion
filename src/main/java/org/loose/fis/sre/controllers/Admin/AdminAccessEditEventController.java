@@ -70,7 +70,7 @@ public class AdminAccessEditEventController {
     }
 
     public void handleEditEventAction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountInfoAccess.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminEditEvent.fxml"));
         Stage window = (Stage) btnEditEvent.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }

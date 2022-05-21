@@ -36,12 +36,12 @@
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <Label layoutX="342.0" layoutY="180.0" text="Locatie:" textFill="#fafafa">
+        <Label layoutX="324.0" layoutY="179.0" text="Locatie:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <Label layoutX="342.0" layoutY="135.0" text="Titlu:" textFill="#fafafa">
+        <Label layoutX="324.0" layoutY="134.0" text="Titlu:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
@@ -51,12 +51,12 @@
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <Label layoutX="342.0" layoutY="225.0" text="Descriere:" textFill="#fafafa">
+        <Label layoutX="324.0" layoutY="224.0" text="Descriere:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <Button fx:id="btnEditEvent" layoutX="416.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleEditEventAction" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Adauga Eveniment" textFill="#fafafa">
+        <Button fx:id="btnEditEvent" layoutX="416.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleEditEventAction" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Editeaza Eveniment" textFill="#fafafa">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
@@ -66,7 +66,7 @@
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
-        <Text fx:id="message" fill="WHITE" layoutX="379.0" layoutY="291.0" text="Introduceți datele, apoi apăsați &quot;Adaugă Eveniment&quot; " textAlignment="CENTER" wrappingWidth="210.59998474121096">
+        <Text fx:id="message" fill="WHITE" layoutX="379.0" layoutY="291.0" text="Pentru a edita evenimentul, apasati pe butonul de jos." textAlignment="CENTER" wrappingWidth="210.59998474121096">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
@@ -86,47 +86,47 @@
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <Label fx:id="ticketPrice_text" layoutX="176.0" layoutY="356.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+        <Label fx:id="ticketPrice_text" layoutX="163.0" layoutY="356.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-      <Label fx:id="parkingPlaceNr_text" layoutX="176.0" layoutY="314.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="parkingPlaceNr_text" layoutX="163.0" layoutY="314.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="parkingPrice_text" layoutX="176.0" layoutY="269.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="parkingPrice_text" layoutX="163.0" layoutY="265.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="date_text" layoutX="176.0" layoutY="220.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="date_text" layoutX="163.0" layoutY="220.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="participants_text" layoutX="176.0" layoutY="175.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="participants_text" layoutX="163.0" layoutY="175.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="id_text" layoutX="176.0" layoutY="131.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="id_text" layoutX="163.0" layoutY="130.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="description_text" layoutX="426.0" layoutY="220.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="description_text" layoutX="409.0" layoutY="220.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="211.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="location_text" layoutX="426.0" layoutY="175.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="location_text" layoutX="409.0" layoutY="174.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="211.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="title_text" layoutX="426.0" layoutY="131.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="150.0" textFill="WHITE">
+      <Label fx:id="title_text" layoutX="409.0" layoutY="129.0" lineSpacing="1.0" prefHeight="26.0" prefWidth="211.0" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="15.0" />
          </font>
