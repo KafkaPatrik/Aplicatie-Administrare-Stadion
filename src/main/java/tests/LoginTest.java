@@ -1,8 +1,10 @@
 package tests;
 
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,7 +30,7 @@ import static org.testfx.assertions.api.Assertions.*;
 @ExtendWith(ApplicationExtension.class)
 class LoginTest {
 
-    public static final String USERNAME = "user";
+    public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
 
     @BeforeEach
@@ -41,8 +43,6 @@ class LoginTest {
         TicketService.initTicketsDatabase();
     }
 
-
-
     @Start
     void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
@@ -53,17 +53,15 @@ class LoginTest {
 
 
     @Test
-    void testRegistration(FxRobot robot) throws IOException {
-        robot.clickOn("#username");
+    void testLogIn(FxRobot robot) throws IOException {
+        robot.clickOn("#usernameTextField");
         robot.write(USERNAME);
-        robot.clickOn("#password");
+        robot.clickOn("#passwordField");
         robot.write(PASSWORD);
 
         robot.clickOn("#btnLogIn");
-        FxAssert.verifyThat(window("My Window"), WindowMatchers.isShowing());
+        assertThat(robot.lookup("#selectionMessage").queryText()).hasText("Selectați evenimentul și apăsați afișează");
     }
-
-
 
 
 }

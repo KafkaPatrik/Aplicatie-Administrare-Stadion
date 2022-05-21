@@ -46,6 +46,7 @@ public class ClientHomePageController {
         items.removeAll();
         items=EventService.getTitleList();
         list.setItems(items);
+        selectionMessage.setText("Selectați evenimentul și apăsați afișează");
     }
 
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
