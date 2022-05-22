@@ -2,6 +2,7 @@ package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
 import org.loose.fis.sre.controllers.LoginController;
+import org.loose.fis.sre.services.TicketService;
 
 public class Ticket {
     @Id
@@ -27,6 +28,9 @@ public class Ticket {
         this.parkingSpot = parkingSpot;
         this.id_event=id_event;
         this.buyerUsername=LoginController.current_user.getUsername();
+    }
+
+    public  Ticket(){
     }
 
     public String getIdCode() {
@@ -65,7 +69,12 @@ public class Ticket {
 
     public void setBuyerUsername(String buyerUsername) { this.buyerUsername = buyerUsername; }
 
-    public  Ticket(){
+    public String getPurchaseDateTimeStamp() {
+        return purchaseDateTimeStamp;
+    }
+
+    public int getId_event() {
+        return id_event;
     }
 
     @Override
@@ -75,4 +84,8 @@ public class Ticket {
         else return false;
     }
 
+    public void changeCategory(String newCategory) {
+        this.category=newCategory;
+        TicketService.updateTicket(this);
+    }
 }
