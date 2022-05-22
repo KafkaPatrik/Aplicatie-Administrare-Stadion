@@ -78,11 +78,20 @@ public class AdminHomePageController {
     public void handleShowSelectionAction(){
         String selection;
         selection=list.getSelectionModel().getSelectedItem();
+        current_selected_event=EventService.returnEventByTitle(selection);
+        int temp_ticket_cnt=current_selected_event.get_event_max_participants()-current_selected_event.getSoldTickets();
+        int temp_parking_cnt=current_selected_event.getMaxParkingSpots()-current_selected_event.getReservedParkingSpots();
         if(selection==null)
            selection="Nu ati selectat nici un eveniment.";
-        else
-        selection="Ati selectat:" + selection;
-        selectionMessage.setText(selection);
+        else {
+            selection = "Ati selectat evenimentul:\n" + selection +
+                    "\nLocatie:" + current_selected_event.get_event_Location()+
+                    "\nData:" + current_selected_event.get_event_Date()+
+                    "\nBilete disponibile:" + temp_ticket_cnt+"/"+current_selected_event.get_event_max_participants()+
+                    "\nLoc. Parcare disponibile:" +temp_parking_cnt +"/"+current_selected_event.getMaxParkingSpots()
+                     ;
+            selectionMessage.setText(selection);
+        }
     }
     public void handleEditEventAction(ActionEvent actionEvent)throws IOException{
         String selection;
