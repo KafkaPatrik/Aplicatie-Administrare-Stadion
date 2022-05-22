@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.FileSystemService;
 import org.loose.fis.sre.services.UserService;
 
@@ -14,11 +15,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserServiceTest {
 
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
+    public static final String ADMIN = "admin";
 
     @BeforeAll
     static void beforeAll() throws IOException, UsernameAlreadyExistsException {
@@ -28,7 +32,6 @@ public class UserServiceTest {
             applicationHomePath.toFile().mkdirs();
         FileUtils.cleanDirectory(applicationHomePath.toFile());
         UserService.initDatabase();
-        UserService.addUser(USERNAME, PASSWORD, "Client");
     }
 
     @AfterAll
@@ -43,22 +46,53 @@ public class UserServiceTest {
 
 
     @Test
+    @Order(5)
     void testValidateLogIn() {
-        assertThat(UserService.validateLogin(USERNAME,PASSWORD).equals("Valid"));
+        assertThat(UserService.validateLogin(ADMIN,PASSWORD).equals("Valid"));
     }
 
     @Test
+    @Order(4)
     void testModifyClientAccountInfo() {
         String email="test@gmail.com", firstName="User", lastName="Name", phoneNumber="0712345678";
-        assertThat(UserService.modifyClientAccountInfo(USERNAME, PASSWORD, email, firstName, lastName, phoneNumber)==true);
-        assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getEmail().equals(email));
-        assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getFirstName().equals(firstName));
-        assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getLastName().equals(lastName));
-        assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getPhoneNumber().equals(phoneNumber));
+        assertThat(UserService.modifyClientAccountInfo(ADMIN, PASSWORD, email, firstName, lastName, phoneNumber,"","","","")==true);
+        assertThat(UserService.returnCurrentUser(ADMIN,PASSWORD).getEmail().equals(email));
+        assertThat(UserService.returnCurrentUser(ADMIN,PASSWORD).getFirstName().equals(firstName));
+        assertThat(UserService.returnCurrentUser(ADMIN,PASSWORD).getLastName().equals(lastName));
+        assertThat(UserService.returnCurrentUser(ADMIN,PASSWORD).getPhoneNumber().equals(phoneNumber));
     }
 
 
+    @Test
+    @Order(1)
+    @DisplayName("Database is initialized, and there are no users")
+    void testDatabaseIsInitializedAndNoUserIsPersisted() {
+        assertThat(UserService.getAllUsers()).isNotNull();
+        assertThat(UserService.getAllUsers()).isEmpty();
+    }
 
+    @Test
+    @Order(2)
+    @DisplayName("User is successfully persisted to Database")
+    void testUserIsAddedToDatabase() throws UsernameAlreadyExistsException {
+        UserService.addUser(ADMIN, PASSWORD, "Administrator");
+        assertThat(UserService.getAllUsers()).isNotEmpty();
+        assertThat(UserService.getAllUsers()).size().isEqualTo(1);
+        User user = UserService.getAllUsers().get(0);
+        assertThat(user).isNotNull();
+        assertThat(user.getUsername()).isEqualTo(ADMIN);
+        assertThat(user.getPassword()).isEqualTo(UserService.encodePassword(ADMIN, PASSWORD));
+        assertThat(user.getRole()).isEqualTo("Administrator");
+    }
+
+    @Test
+    @Order(3)
+    @DisplayName("User can not be added twice")
+    void testUserCanNotBeAddedTwice() {
+        assertThrows(UsernameAlreadyExistsException.class, () -> {
+            UserService.addUser(ADMIN, ADMIN, "Administrator");
+        });
+    }
 
 
 }

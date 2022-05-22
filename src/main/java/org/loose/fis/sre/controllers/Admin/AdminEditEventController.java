@@ -1,5 +1,4 @@
 package org.loose.fis.sre.controllers.Admin;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,16 +10,17 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.EventService;
 import org.loose.fis.sre.exceptions.EventAlreadyExistsException;
+import org.loose.fis.sre.controllers.Admin.AdminAccessEditEventController;
+import org.loose.fis.sre.controllers.AdminHomePageController;
 import java.io.IOException;
-
-public class AdminAddEventController {
+public class AdminEditEventController{
 
     @FXML
     private Button btnLogOut;
     @FXML
     private Button btnHomePage;
     @FXML
-    private Button btnSaveClientData;
+    private Button btnSaveEvent;
     @FXML
     private TextField participantsField;
     @FXML
@@ -52,8 +52,7 @@ public class AdminAddEventController {
         window.setScene(new Scene(root, 600, 450));
     }
 
-
-    public void handleAddEvent(ActionEvent actionEvent) {
+    public void handleSaveEventAction(ActionEvent actionEvent){
         int partic_data =Integer.parseInt(participantsField.getText());
         String title_data = titleField.getText();
         String location_data = locationField.getText();
@@ -62,15 +61,9 @@ public class AdminAddEventController {
         int parking_price = Integer.parseInt(parkingPriceField.getText());
         int max_Parking_Spots = Integer.parseInt(parkingSpotsField.getText());
         int ticketPrice=Integer.parseInt(ticketPriceField.getText());
-        int id_data=0;//placeholder
-        try {
-            EventService.addEvent(id_data,partic_data,title_data,location_data,date_data,description_data, max_Parking_Spots, parking_price,ticketPrice);
-            modifiedMessage.setText("Eveniment adăugat cu succes!");
-        } catch (EventAlreadyExistsException e) {
-            modifiedMessage.setText(e.getMessage());
-        }
+        int id_data=AdminAccessEditEventController.getEvent().get_event_Id();
+            EventService.modifyEventInfo(id_data,partic_data,title_data,location_data,date_data,description_data,parking_price,ticketPrice,max_Parking_Spots);
+            modifiedMessage.setText("Evenimentul a fost modificat cu succes!");
 
     }
-
-
 }

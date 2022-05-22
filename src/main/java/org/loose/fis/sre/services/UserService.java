@@ -37,7 +37,7 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -72,7 +72,7 @@ public class UserService {
     }
 
 
-    public static boolean modifyClientAccountInfo (String username, String password, String email, String firstName, String lastName, String phoneNumber) {
+    public static boolean modifyClientAccountInfo (String username, String password, String email, String firstName, String lastName, String phoneNumber,String stadiumAdress,String capacity,String stadiumName,String ownerName) {
         for (User user : userRepository.find()) {
             if(username.equals(user.getUsername()))
             {   String encodedPassword=encodePassword(username,password);
@@ -81,6 +81,10 @@ public class UserService {
                     user.setFirstName(firstName);
                     user.setLastName(lastName);
                     user.setPhoneNumber(phoneNumber);
+                    user.setStadiumAdress(stadiumAdress);
+                    user.setCapacity(capacity);
+                    user.setStadiumName(stadiumName);
+                    user.setOwnerName(ownerName);
                     userRepository.update(user);
                     return true;
                 }

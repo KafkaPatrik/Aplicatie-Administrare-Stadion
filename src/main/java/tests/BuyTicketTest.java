@@ -43,7 +43,7 @@ public class BuyTicketTest {
         UserService.initDatabase();
         EventService.initDatabase();
         TicketService.initTicketsDatabase();
-        EventService.addEvent(1,1000,"Concert "+EVENT,EVENT,EVENT,EVENT,100,10);
+        EventService.addEvent(1,1000,"Concert "+EVENT,EVENT,EVENT,EVENT,100,10,10);
         UserService.addUser(USERNAME, PASSWORD, "Client");
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("buyConcertTicket.fxml"));
         primaryStage.setTitle("Aplicatie Administrare Stadion");

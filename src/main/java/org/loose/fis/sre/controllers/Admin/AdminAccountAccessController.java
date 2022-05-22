@@ -39,6 +39,14 @@ public class AdminAccountAccessController {
     @FXML
     private Label roleText;
     @FXML
+    private Label sadrText;
+    @FXML
+    private Label capText;
+    @FXML
+    private Label snameText;
+    @FXML
+    private Label ownnText;
+    @FXML
     private Text warningNewAccountMessage;
 
 
@@ -67,6 +75,10 @@ public class AdminAccountAccessController {
                 firstNameText.setText(current_user.getFirstName());
                 lastNameText.setText(current_user.getLastName());
                 phoneNumberText.setText(current_user.getPhoneNumber());
+                sadrText.setText(current_user.getStadiumAdress());
+                capText.setText(current_user.getCapacity());
+                snameText.setText(current_user.getStadiumName());
+                ownnText.setText(current_user.getOwnerName());
                 roleText.setText("Rol: " + current_user.getRole());
                 if (current_user.getEmail().length()==0)
                     warningNewAccountMessage.setText("Trebuie completate datele contului\ndeoarece dețineți un cont nou creat!");
@@ -76,7 +88,7 @@ public class AdminAccountAccessController {
 
 
     public void handleModifyDataAction(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountInfoAccess.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminAccountModifyInfo.fxml"));
         Stage window = (Stage) btnModifyData.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
