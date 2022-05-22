@@ -1,12 +1,15 @@
 package tests.services;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.FileSystemService;
 import org.loose.fis.sre.services.UserService;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -18,12 +21,14 @@ public class UserServiceTest {
     public static final String PASSWORD = "password";
 
     @BeforeAll
-    static void beforeAll() {
+    static void beforeAll() throws IOException, UsernameAlreadyExistsException {
         System.out.println("Before Class");
         Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
+        FileUtils.cleanDirectory(applicationHomePath.toFile());
         UserService.initDatabase();
+        UserService.addUser(USERNAME, PASSWORD, "Client");
     }
 
     @AfterAll
