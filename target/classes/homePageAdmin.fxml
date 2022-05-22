@@ -32,22 +32,27 @@
                 <Image url="@Images/title.png" />
             </image>
         </ImageView>
-        <Button fx:id="btnAddEvent" layoutX="269.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleAddEventAction" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: #55c3fe;" text="Adaugă Eveniment" textFill="#fafafa" visible="true">
+        <Button fx:id="btnAddEvent" layoutX="347.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleAddEventAction" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: #55c3fe;" text="Adaugă Eveniment" textFill="#fafafa" visible="true">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
       </Button>
       <ListView fx:id="list" layoutX="45.0" layoutY="148.0" prefHeight="245.0" prefWidth="254.0" />
-      <Text fx:id="selectionMessage" fill="WHITE" layoutX="346.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
+      <Text fx:id="selectionMessage" fill="WHITE" layoutX="346.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font></Text>
-        <Button fx:id="btnShowSelection" layoutX="348.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleShowSelectionAction" prefHeight="31.0" prefWidth="231.0" style="-fx-background-color: #55c3fe;" text="Afiseaza Evenimentul Selectat" textFill="#fafafa" visible="true">
+        <Button fx:id="btnShowSelection" layoutX="347.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleShowSelectionAction" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: #55c3fe;" text="Afiseaza Evenimentul Selectat" textFill="#fafafa" visible="true">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
-      <Button fx:id="btnEditEvent" layoutX="342.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleEditEventAction" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: #55c3fe;" text="Editeaza Evenimentul Selectat" textFill="#fafafa" visible="true">
+      <Button fx:id="btnEditEvent" layoutX="347.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleEditEventAction" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: #55c3fe;" text="Editeaza Evenimentul Selectat" textFill="#fafafa" visible="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDeleteEvent" layoutX="347.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleDeleteEventAction" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: #55c3fe;" text="Sterge Eveniment" textFill="#fafafa" visible="true">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

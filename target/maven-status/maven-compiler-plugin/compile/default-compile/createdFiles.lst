@@ -4,6 +4,7 @@ org\loose\fis\sre\exceptions\UsernameAlreadyExistsException.class
 org\loose\fis\sre\controllers\Client\ClientAccountAccessController.class
 org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.class
 org\loose\fis\sre\controllers\Admin\AdminAccountModifyInfoController.class
+org\loose\fis\sre\controllers\Admin\AdminAccessEditEventController.class
 org\loose\fis\sre\controllers\Client\BuyMatchTicketController.class
 org\loose\fis\sre\controllers\Client\MatchTicketController.class
 org\loose\fis\sre\services\UserService.class
@@ -23,12 +24,6 @@ org\loose\fis\sre\controllers\Admin\AdminAddEventController.class
 org\loose\fis\sre\model\Eveniment.class
 org\loose\fis\sre\services\TicketService.class
 org\loose\fis\sre\controllers\Client\BuyConcertTicketController.class
-<<<<<<< HEAD
-org\loose\fis\sre\controllers\Admin\AdminAccountModifyInfoController.class
-org\loose\fis\sre\controllers\Admin\AdminAccessEditEventController.class
-org\loose\fis\sre\controllers\Client\BuyMatchTicketController.class
-=======
->>>>>>> main
 org\loose\fis\sre\model\Ticket.class
 org\loose\fis\sre\controllers\AdminHomePageController.class
 org\loose\fis\sre\controllers\ClientHomePageController.class

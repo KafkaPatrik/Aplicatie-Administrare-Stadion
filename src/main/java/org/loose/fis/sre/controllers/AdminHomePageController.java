@@ -34,6 +34,8 @@ public class AdminHomePageController {
     @FXML
     private Button btnEditEvent;
     @FXML
+    private Button btnDeleteEvent;
+    @FXML
     private Button btnAccountInfo;
     @FXML
     private Button btnShowSelection;
@@ -95,7 +97,6 @@ public class AdminHomePageController {
              else
         System.out.println("WARNING: No event is selected.");
     }
-
 
 }
 
