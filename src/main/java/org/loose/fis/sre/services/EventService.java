@@ -80,9 +80,9 @@ public class EventService {
         return null;
     }
 
-    public static void updateEvent(Eveniment eveniment){
-        eventRepository.update(eveniment);
-    }
+    public static void updateEvent(Eveniment eveniment){eventRepository.update(eveniment);}
+
+    public static void deleteEvent(Eveniment eveniment){eventRepository.remove(eveniment);}
 
     public static int get_event_count(){
         int cnt=0;
