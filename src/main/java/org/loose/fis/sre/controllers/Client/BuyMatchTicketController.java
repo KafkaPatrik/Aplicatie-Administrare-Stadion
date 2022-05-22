@@ -96,7 +96,8 @@ public class BuyMatchTicketController {
         event.updateEventSoldTickets();
         //EventService.updateEvent(event);
         String id = "#"+event.get_event_Id()+event.getSoldTickets();
-        TicketService.addTicket(id, nameString, phoneNumberString, categoryString,150.00 ,parkingValue, parkingSpot, event.get_event_Id());
+        double ticketPrice = event.getTicketPrice();
+        TicketService.addTicket(id, nameString, phoneNumberString, categoryString,ticketPrice ,parkingValue, parkingSpot, event.get_event_Id());
         setCurrentTicket(id);
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("matchTicket.fxml"));
         Stage window = (Stage) btnBuyTicket.getScene().getWindow();
