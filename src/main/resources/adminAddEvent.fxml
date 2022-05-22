@@ -27,67 +27,68 @@
                 <Image url="@Images/title.png" />
             </image>
         </ImageView>
-        <Label layoutX="21.0" layoutY="136.0" text="ID:" textFill="#fafafa">
-            <font>
-                <Font name="SansSerif Bold" size="15.0" />
-            </font></Label>
-        <TextField fx:id="idField" layoutX="187.0" layoutY="131.0" prefHeight="26.0" prefWidth="106.0" />
         <Label layoutX="23.0" layoutY="180.0" text="Nr. Participanti:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <Label layoutX="342.0" layoutY="180.0" text="Locatie:" textFill="#fafafa">
+        <Label layoutX="342.0" layoutY="134.0" text="Locatie:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="locationField" layoutX="435.0" layoutY="176.0" />
-        <Label layoutX="342.0" layoutY="135.0" text="Titlu:" textFill="#fafafa">
+        <TextField fx:id="locationField" layoutX="435.0" layoutY="131.0" />
+        <Label layoutX="22.0" layoutY="135.0" text="Titlu:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="titleField" layoutX="435.0" layoutY="131.0" prefHeight="26.0" prefWidth="150.0" />
+        <TextField fx:id="titleField" layoutX="157.0" layoutY="130.0" prefHeight="26.0" prefWidth="135.0" />
         <Label layoutX="22.0" layoutY="225.0" text="Data:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="dateField" layoutX="187.0" layoutY="220.0" prefHeight="26.0" prefWidth="106.0" />
-        <Label layoutX="342.0" layoutY="225.0" text="Descriere:" textFill="#fafafa">
+        <TextField fx:id="dateField" layoutX="158.0" layoutY="220.0" prefHeight="26.0" prefWidth="135.0" />
+        <Label layoutX="342.0" layoutY="180.0" text="Descriere:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="descriptionField" layoutX="435.0" layoutY="221.0" />
-        <Button fx:id="btnAddEvent" layoutX="416.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleAddEvent" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Adauga Eveniment" textFill="#fafafa">
+        <TextField fx:id="descriptionField" layoutX="435.0" layoutY="176.0" />
+        <Button fx:id="btnAddEvent" layoutX="398.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleAddEvent" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #55c3fe;" text="Adauga Eveniment" textFill="#fafafa">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
-        <Text fx:id="modifiedMessage" fill="WHITE" layoutX="416.0" layoutY="362.0" textAlignment="CENTER" wrappingWidth="171.20000000000005">
+        <Text fx:id="modifiedMessage" fill="WHITE" layoutX="398.0" layoutY="324.0" textAlignment="CENTER" wrappingWidth="171.20000000000005">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
-        <Text fx:id="message" fill="WHITE" layoutX="379.0" layoutY="299.0" text="Introduceți datele, apoi apăsați &quot;Adaugă Eveniment&quot; " textAlignment="CENTER" wrappingWidth="210.59998474121096">
+        <Text fx:id="message" fill="WHITE" layoutX="379.0" layoutY="255.0" text="Introduceți datele, apoi apăsați &quot;Adaugă Eveniment&quot; " textAlignment="CENTER" wrappingWidth="210.59998474121096">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
             </font>
         </Text>
-        <TextField fx:id="participantsField" layoutX="187.0" layoutY="174.0" prefHeight="26.0" prefWidth="106.0" />
+        <TextField fx:id="participantsField" layoutX="158.0" layoutY="174.0" prefHeight="26.0" prefWidth="135.0" />
         <Label layoutX="22.0" layoutY="274.0" text="Pret Parcare:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="parkingPriceField" layoutX="187.0" layoutY="268.0" prefHeight="26.0" prefWidth="106.0" />
+        <TextField fx:id="parkingPriceField" layoutX="158.0" layoutY="268.0" prefHeight="26.0" prefWidth="135.0" />
         <Label layoutX="21.0" layoutY="319.0" text="Nr. Locuri Parcare:" textFill="#fafafa">
             <font>
                 <Font name="SansSerif Bold" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="parkingSpotsField" layoutX="187.0" layoutY="314.0" prefHeight="26.0" prefWidth="106.0" />
+        <TextField fx:id="parkingSpotsField" layoutX="158.0" layoutY="314.0" prefHeight="26.0" prefWidth="135.0" />
+      <TextField fx:id="ticketPriceField" layoutX="158.0" layoutY="357.0" prefHeight="26.0" prefWidth="135.0" />
+      <Label layoutX="21.0" layoutY="361.0" text="Pret Bilet:" textFill="#fafafa">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
