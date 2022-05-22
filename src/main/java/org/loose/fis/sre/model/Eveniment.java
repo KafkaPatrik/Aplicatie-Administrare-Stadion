@@ -5,7 +5,7 @@ import org.loose.fis.sre.services.EventService;
 
 public class Eveniment{
     @Id
-    private int event_Id;
+    public  int event_Id;
     private int event_max_participants;
     private String event_Title;
     private String event_Location;
@@ -16,6 +16,7 @@ public class Eveniment{
     private int event_maxParkingSpots;
     private int event_parkingPrice;
     private int event_ticketPrice;
+    public static int event_cnt;
 
 
     public void set_event_Id(int event_Id) {
@@ -39,7 +40,8 @@ public class Eveniment{
     public void set_event_ticketPrice(int event_ticketPrice){this.event_ticketPrice=event_ticketPrice;}
 
 
-    public Eveniment(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_parkingPrice, int event_maxParkingSpots,int event_ticketPrice) {
+    public Eveniment(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description,int event_parkingPrice, int event_maxParkingSpots,int event_ticketPrice)
+    {
         this.event_max_participants =event_max_participants;
         this.event_Title =event_Title;
         this.event_Location =event_Location;

@@ -22,8 +22,6 @@ public class AdminAddEventController {
     @FXML
     private Button btnSaveClientData;
     @FXML
-    private TextField idField;
-    @FXML
     private TextField participantsField;
     @FXML
     private TextField titleField;
@@ -56,7 +54,6 @@ public class AdminAddEventController {
 
 
     public void handleAddEvent(ActionEvent actionEvent) {
-        int id_data =Integer.parseInt(idField.getText());
         int partic_data =Integer.parseInt(participantsField.getText());
         String title_data = titleField.getText();
         String location_data = locationField.getText();
@@ -65,7 +62,7 @@ public class AdminAddEventController {
         int parking_price = Integer.parseInt(parkingPriceField.getText());
         int max_Parking_Spots = Integer.parseInt(parkingSpotsField.getText());
         int ticketPrice=Integer.parseInt(ticketPriceField.getText());
-
+        int id_data=0;//placeholder
         try {
             EventService.addEvent(id_data,partic_data,title_data,location_data,date_data,description_data, max_Parking_Spots, parking_price,ticketPrice);
             modifiedMessage.setText("Eveniment adăugat cu succes!");
