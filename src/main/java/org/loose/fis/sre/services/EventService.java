@@ -25,8 +25,8 @@ public class EventService {
         eventRepository = database.getRepository(Eveniment.class);
     }
     public static void addEvent(int event_Id,int event_max_participants,String event_Title,String event_Location,String event_Date,String event_Description, int maxParkingSpots, int parkingPrice,int ticketPrice) throws EventAlreadyExistsException{
-        Eveniment.event_cnt=EventService.get_event_count()+1;
-        System.out.println("EVENTID:"+Eveniment.event_cnt);
+        Eveniment.event_cnt=EventService.get_event_count()+2;
+        //System.out.println("EVENTID:"+Eveniment.event_cnt);
         eventRepository.insert(new Eveniment(Eveniment.event_cnt,event_max_participants,event_Title,event_Location,event_Date,event_Description, maxParkingSpots, parkingPrice,ticketPrice));
     }
 
@@ -80,9 +80,10 @@ public class EventService {
         return null;
     }
 
-    public static void updateEvent(Eveniment eveniment){
-        eventRepository.update(eveniment);
-    }
+    public static void updateEvent(Eveniment eveniment){eventRepository.update(eveniment);}
+
+    public static void deleteEvent(Eveniment eveniment){eventRepository.remove(eveniment);}
+
     public static int get_event_count(){
         int cnt=0;
         for (Eveniment event : eventRepository.find())

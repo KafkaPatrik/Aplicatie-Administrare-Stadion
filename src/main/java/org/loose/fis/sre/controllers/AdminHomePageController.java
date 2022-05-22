@@ -34,6 +34,8 @@ public class AdminHomePageController {
     @FXML
     private Button btnEditEvent;
     @FXML
+    private Button btnDeleteEvent;
+    @FXML
     private Button btnAccountInfo;
     @FXML
     private Button btnShowSelection;
@@ -95,8 +97,14 @@ public class AdminHomePageController {
              else
         System.out.println("WARNING: No event is selected.");
     }
-
-
+    public void handleDeleteEventAction(){
+        String selection;
+        selection=list.getSelectionModel().getSelectedItem();
+        current_selected_event=EventService.returnEventByTitle(selection);
+        EventService.deleteEvent(current_selected_event);
+        initialize();
+        selectionMessage.setText("Evenimentul a fost sters cu succes!");
+    }
 }
 
 
