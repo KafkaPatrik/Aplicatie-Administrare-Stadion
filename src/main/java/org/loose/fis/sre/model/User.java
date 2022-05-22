@@ -10,6 +10,10 @@ public class User {
     private String firstName, lastName;
     private String email;
     private String phoneNumber;
+    private String stadiumAdress;
+    private String capacity;
+    private String stadiumName;
+    private String ownerName;
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -27,6 +31,21 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    public void setStadiumAdress(String stadiumAdress) {
+        this.stadiumAdress = stadiumAdress;
+    }
+
+    public void setStadiumName(String stadiumName) {
+        this.stadiumName = stadiumName;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
 
     public User(String username, String password, String role) {
         this.username = username;
@@ -36,6 +55,10 @@ public class User {
         this.lastName="";
         this.email="";
         this.phoneNumber="";
+        this.stadiumAdress="";
+        this.capacity="";
+        this.stadiumName="";
+        this.ownerName="";
     }
 
     public User() {
@@ -75,6 +98,22 @@ public class User {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getStadiumAdress() {
+        return stadiumAdress;
+    }
+
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public String getStadiumName() {
+        return stadiumName;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
     }
 
     public void setRole(String role) {

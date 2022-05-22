@@ -56,7 +56,7 @@ public class ClientAccountModifyInfoController {
         String emailString = emailField.getText();
         String firstNameString = firstNameField.getText();
         String lastNameString = lastNameField.getText();
-        if (UserService.modifyClientAccountInfo(usernameString, passwordString, emailString, firstNameString,lastNameString, phoneNumberString)) {
+        if (UserService.modifyClientAccountInfo(usernameString, passwordString, emailString, firstNameString,lastNameString, phoneNumberString,"","","","")) {
             modifiedMessage.setText("Date modificate cu succes!");
         }
         else modifiedMessage.setText("Încercați din nou! Apărut o eroare!");

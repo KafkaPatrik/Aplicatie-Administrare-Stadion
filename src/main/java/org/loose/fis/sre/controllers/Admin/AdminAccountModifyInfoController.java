@@ -34,6 +34,14 @@ public class AdminAccountModifyInfoController {
     @FXML
     private TextField passwordField;
     @FXML
+    private TextField stadiumAdressField;
+    @FXML
+    private TextField capacityField;
+    @FXML
+    private TextField stadiumNameField;
+    @FXML
+    private TextField ownerName;
+    @FXML
     private Text modifiedMessage;
 
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
@@ -56,7 +64,12 @@ public class AdminAccountModifyInfoController {
         String emailString = emailField.getText();
         String firstNameString = firstNameField.getText();
         String lastNameString = lastNameField.getText();
-        if (UserService.modifyClientAccountInfo(usernameString, passwordString, emailString, firstNameString,lastNameString, phoneNumberString)) {
+        String stadiumAdressString=stadiumAdressField.getText();
+        String capacityFieldString=capacityField.getText();
+        String stadiumNameString=stadiumNameField.getText();
+        String ownerNameString=ownerName.getText();
+
+        if (UserService.modifyClientAccountInfo(usernameString, passwordString, emailString, firstNameString,lastNameString, phoneNumberString,stadiumAdressString,capacityFieldString,stadiumNameString,ownerNameString)) {
             modifiedMessage.setText("Date modificate cu succes!");
         }
         else modifiedMessage.setText("Încercați din nou! Apărut o eroare!");

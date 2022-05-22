@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.services.EventService;
 import org.loose.fis.sre.exceptions.EventAlreadyExistsException;
-
 import java.io.IOException;
 
 public class AdminAddEventController {
@@ -22,8 +21,6 @@ public class AdminAddEventController {
     private Button btnHomePage;
     @FXML
     private Button btnSaveClientData;
-    @FXML
-    private TextField idField;
     @FXML
     private TextField participantsField;
     @FXML
@@ -40,6 +37,8 @@ public class AdminAddEventController {
     private TextField parkingPriceField;
     @FXML
     private TextField parkingSpotsField;
+    @FXML
+    private TextField ticketPriceField;
 
     public void handleLoggingOut(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
@@ -55,7 +54,6 @@ public class AdminAddEventController {
 
 
     public void handleAddEvent(ActionEvent actionEvent) {
-        int id_data =Integer.parseInt(idField.getText());
         int partic_data =Integer.parseInt(participantsField.getText());
         String title_data = titleField.getText();
         String location_data = locationField.getText();
@@ -63,9 +61,10 @@ public class AdminAddEventController {
         String description_data = descriptionField.getText();
         int parking_price = Integer.parseInt(parkingPriceField.getText());
         int max_Parking_Spots = Integer.parseInt(parkingSpotsField.getText());
-
+        int ticketPrice=Integer.parseInt(ticketPriceField.getText());
+        int id_data=0;//placeholder
         try {
-            EventService.addEvent(id_data,partic_data,title_data,location_data,date_data,description_data, max_Parking_Spots, parking_price);
+            EventService.addEvent(id_data,partic_data,title_data,location_data,date_data,description_data, max_Parking_Spots, parking_price,ticketPrice);
             modifiedMessage.setText("Eveniment adăugat cu succes!");
         } catch (EventAlreadyExistsException e) {
             modifiedMessage.setText(e.getMessage());

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccountAccessController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\RegistrationController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAddEventController.java
@@ -28,3 +29,35 @@ D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Apl
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ViewTicketsHistoryController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\ClientHomePageController.java
 D:\OneDrive - Universitatea Politehnica Timisoara\UPT AN 2 SEM 2\FIS\Aux AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\User.java
+=======
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\TicketAlreadyExistsException.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\Main.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\UserService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountAccessController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\BuyConcertTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\RegistrationController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ModifyTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ViewTicketsHistoryController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\TicketService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\Eveniment.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\MatchTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\Ticket.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAddEventController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\EventService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ViewMatchTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\model\User.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ViewConcertTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminEditEventController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ConcertTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\ClientHomePageController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccountAccessController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\AdminHomePageController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccessEditEventController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\BuyMatchTicketController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\UsernameAlreadyExistsException.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\LoginController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\services\FileSystemService.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Client\ClientAccountModifyInfoController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\controllers\Admin\AdminAccountModifyInfoController.java
+D:\UPT\An 2\Semestrul 2\FIS\AplicatieAdministrareStadion\AAS\Aplicatie-Administrare-Stadion\src\main\java\org\loose\fis\sre\exceptions\EventAlreadyExistsException.java
+>>>>>>> 59f98e7a8da9449699bc52ae80d58ceada31ebcf

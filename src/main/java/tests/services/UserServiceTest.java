@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.FileSystemService;
 import org.loose.fis.sre.services.UserService;
 
@@ -18,12 +19,13 @@ public class UserServiceTest {
     public static final String PASSWORD = "password";
 
     @BeforeAll
-    static void beforeAll() {
+    static void beforeAll() throws UsernameAlreadyExistsException {
         System.out.println("Before Class");
         Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
         UserService.initDatabase();
+        UserService.addUser(USERNAME,PASSWORD,"Client");
     }
 
     @AfterAll
@@ -45,7 +47,7 @@ public class UserServiceTest {
     @Test
     void testModifyClientAccountInfo() {
         String email="test@gmail.com", firstName="User", lastName="Name", phoneNumber="0712345678";
-        assertThat(UserService.modifyClientAccountInfo(USERNAME, PASSWORD, email, firstName, lastName, phoneNumber)==true);
+        assertThat(UserService.modifyClientAccountInfo(USERNAME, PASSWORD, email, firstName, lastName, phoneNumber,"","","","")==true);
         assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getEmail().equals(email));
         assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getFirstName().equals(firstName));
         assertThat(UserService.returnCurrentUser(USERNAME,PASSWORD).getLastName().equals(lastName));
