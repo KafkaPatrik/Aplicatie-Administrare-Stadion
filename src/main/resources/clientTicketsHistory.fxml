@@ -32,7 +32,7 @@
                 <Image url="@Images/title.png" />
             </image>
         </ImageView>
-        <ListView fx:id="list" layoutX="58.0" layoutY="126.0" prefHeight="239.0" prefWidth="510.0" />
+        <ListView fx:id="list" layoutX="58.0" layoutY="125.0" prefHeight="239.0" prefWidth="510.0" />
         <Text fx:id="message" fill="WHITE" layoutX="139.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="241.60000000000002">
             <font>
                 <Font name="SansSerif Bold" size="14.0" />
@@ -42,5 +42,10 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
+      <Button fx:id="btnModifyTicket" layoutX="58.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleModifyTicketAction" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #55c3fe;" text="Modifică Bilet" textFill="#fafafa" visible="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

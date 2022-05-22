@@ -10,6 +10,7 @@ org\loose\fis\sre\services\UserService.class
 org\loose\fis\sre\controllers\Admin\AdminAccountAccessController.class
 org\loose\fis\sre\controllers\LoginController.class
 org\loose\fis\sre\Main.class
+org\loose\fis\sre\controllers\Client\ModifyTicketController.class
 org\loose\fis\sre\controllers\Client\ConcertTicketController.class
 org\loose\fis\sre\exceptions\EventAlreadyExistsException.class
 org\loose\fis\sre\model\User.class

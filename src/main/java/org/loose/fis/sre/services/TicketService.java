@@ -59,4 +59,7 @@ public class TicketService {
         return userTicketsList;
     }
 
+    public static void updateTicket(Ticket ticket) {
+        ticketRepository.update(ticket);
+    }
 }
